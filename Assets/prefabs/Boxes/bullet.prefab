@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 5969628609626260583}
   - component: {fileID: 5969628609626260580}
   - component: {fileID: 5969628609626260581}
-  - component: {fileID: 593960496196559656}
   - component: {fileID: 5006485747005963200}
   m_Layer: 0
   m_Name: bullet
@@ -112,19 +111,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!135 &593960496196559656
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5969628609626260578}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5006485747005963200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,8 +126,6 @@ MonoBehaviour:
   bullet: {fileID: 5969628609626260578}
   bulletSpeed: 1500
   dmg: 50
-  aoe: 0
-  aoeDmg: 0
   explosive: 0
   explosionPower: 10
   radius: 5

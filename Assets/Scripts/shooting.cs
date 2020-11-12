@@ -37,8 +37,8 @@ public class shooting : MonoBehaviour
     }
     public void Shoot(){
         
-            Shooting();
-
+        Shooting();
+        Debug.Log("shoot called");
     }
 
     void Shooting(){

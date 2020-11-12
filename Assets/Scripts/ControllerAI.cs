@@ -1,0 +1,77 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.AI;
+
+public class ControllerAI : MonoBehaviour
+{
+    [Header("Navigation")]
+    [SerializeField]
+    private NavMeshAgent m_NavMeshAgent;
+    [SerializeField]
+    private GameObject m_Target;
+    //[SerializeField]
+    //private Animation m_TargetAnimation;
+    [SerializeField]
+    private float m_DetectionRange;
+    [SerializeField]
+    private float m_DistanceToTarget; //I am using this variable to see in realtime what the distance is between the characters when the scene is played. This is so that I can tweak my stopping distance and weapon throw distance in the future functions
+    [SerializeField]
+    private GameObject m_HomeBase;
+    [Space(8)]
+    [SerializeField]
+    private float m_Health = 20f;
+    [SerializeField]
+    private float m_RetreatHealth = 5f;
+    //[SerializeField]
+    //private GameObject m_BulletPrefab;
+    [SerializeField]
+    private float m_WeaponThrowRange = 15f; //The character needs to know when to start the weapon attack, so I use this as the range within the BulletAttack() function
+
+    //[SerializeField]
+    //private float m_BulletAttackRate = 2; //How often should the weapons fire. This can be adjusted per character, and I have set it to every 2 “seconds” for now.
+
+    //[SerializeField]
+    //private float m_BulletAttackTracker = 0; //This variable has a timer functionality, and deltaTime gets added to this variable in the BulletAttack() function. As soon as m_BulletAttackTracker is equal or greater than m_BulletAttackRate(currently 2), it will reset the value for m_BulletAttackTracker timer back to 0
+
+
+    
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        DistanceDetection();
+        if((gameObject.GetComponent<HealthBar>().currentHealth > m_RetreatHealth) ){
+            gameObject.GetComponent<NavMeshAgent>().stoppingDistance = m_WeaponThrowRange;
+            MoveToTarget();
+        }
+        
+    }
+
+    void DistanceDetection(){
+        this.m_DistanceToTarget = Vector3.Distance(this.transform.position, this.m_Target.transform.position);
+    }
+
+    void MoveToTarget(){
+        //gameObject.transform.position += transform.forward *Time.deltaTime;
+        //gameObject.transform.Translate(m_Target.transform.position * Time.deltaTime);
+        Debug.Log("inside MoveToTarget");
+        if(m_WeaponThrowRange < m_DistanceToTarget){
+            m_NavMeshAgent.destination = m_Target.transform.position;
+            Debug.Log("inside MoveToTarget if");
+        }
+        else
+        {
+            Debug.Log("inside MoveToTarget else");
+            gameObject.GetComponent<shooting>().Shoot();
+            Debug.Log("inside MoveToTarget else");
+        }
+        
+
+    }
+}
