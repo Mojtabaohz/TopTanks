@@ -26,7 +26,8 @@ public class ControllerAI : MonoBehaviour
     //[SerializeField]
     //private GameObject m_BulletPrefab;
     [SerializeField]
-    private float m_WeaponThrowRange = 15f; //The character needs to know when to start the weapon attack, so I use this as the range within the BulletAttack() function
+    private float m_WeaponThrowRange = 15f;
+     //The character needs to know when to start the weapon attack, so I use this as the range within the BulletAttack() function
 
     //[SerializeField]
     //private float m_BulletAttackRate = 2; //How often should the weapons fire. This can be adjusted per character, and I have set it to every 2 “seconds” for now.
@@ -34,17 +35,23 @@ public class ControllerAI : MonoBehaviour
     //[SerializeField]
     //private float m_BulletAttackTracker = 0; //This variable has a timer functionality, and deltaTime gets added to this variable in the BulletAttack() function. As soon as m_BulletAttackTracker is equal or greater than m_BulletAttackRate(currently 2), it will reset the value for m_BulletAttackTracker timer back to 0
 
-
+    RaycastHit hit ;
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        m_WeaponThrowRange = gameObject.GetComponent<TanksAttr>().fireRange;
+        m_DetectionRange = gameObject.GetComponent<TanksAttr>().viewRange;
+        m_NavMeshAgent = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
+        Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.white);
+        
+        
         DistanceDetection();
         if((gameObject.GetComponent<HealthBar>().currentHealth > m_RetreatHealth) ){
             gameObject.GetComponent<NavMeshAgent>().stoppingDistance = m_WeaponThrowRange;
@@ -52,26 +59,29 @@ public class ControllerAI : MonoBehaviour
         }
         
     }
-
+    
     void DistanceDetection(){
         this.m_DistanceToTarget = Vector3.Distance(this.transform.position, this.m_Target.transform.position);
     }
 
     void MoveToTarget(){
-        //gameObject.transform.position += transform.forward *Time.deltaTime;
-        //gameObject.transform.Translate(m_Target.transform.position * Time.deltaTime);
-        Debug.Log("inside MoveToTarget");
+        
         if(m_WeaponThrowRange < m_DistanceToTarget){
-            m_NavMeshAgent.destination = m_Target.transform.position;
-            Debug.Log("inside MoveToTarget if");
+            m_NavMeshAgent.SetDestination(m_Target.transform.position);
         }
         else
         {
-            Debug.Log("inside MoveToTarget else");
+            
             gameObject.GetComponent<shooting>().Shoot();
-            Debug.Log("inside MoveToTarget else");
         }
         
 
+    }
+    // draw view range and shoot range of tanks in debug mode.
+    void OnDrawGizmos(){
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(gameObject.transform.position,m_DetectionRange);
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(gameObject.transform.position,m_WeaponThrowRange);
     }
 }

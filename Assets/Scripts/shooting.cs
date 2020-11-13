@@ -38,7 +38,7 @@ public class shooting : MonoBehaviour
     public void Shoot(){
         
         Shooting();
-        Debug.Log("shoot called");
+        //Debug.Log("shoot called");
     }
 
     void Shooting(){
@@ -73,8 +73,8 @@ public class shooting : MonoBehaviour
             }
             else{
 
-                print("shooting is on cooldown");
-                ReloadSound.Play();
+                //print("shooting is on cooldown");
+                //ReloadSound.Play();
             }
     }
 

@@ -2439,6 +2439,27 @@ MonoBehaviour:
   m_Health: 20
   m_RetreatHealth: 5
   m_WeaponThrowRange: 15
+--- !u!114 &397143209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 397143206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6ab5a4fa9ea8544fa6c0b2eaac00511, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  penetration: 0
+  moveSpeed: 0
+  health: 0
+  currentHealth: 0
+  viewRange: 10
+  fireRange: 5
+  armor: 0
+  reloadSpeed: 0
 --- !u!4 &397143215 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7658517037058384664, guid: b6baf90ec56537a49bc160269453f0bd,
@@ -4995,12 +5016,12 @@ PrefabInstance:
     - target: {fileID: 7851556810256387884, guid: 2f59b66c3bf203743a620bf48a90e539,
         type: 3}
       propertyPath: newWeapons.Array.size
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7851556810256387884, guid: 2f59b66c3bf203743a620bf48a90e539,
         type: 3}
       propertyPath: Chaos.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7851556810256387884, guid: 2f59b66c3bf203743a620bf48a90e539,
         type: 3}
@@ -5928,6 +5949,27 @@ NavMeshAgent:
   m_BaseOffset: 0.6259148
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &1147729270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1147729267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6ab5a4fa9ea8544fa6c0b2eaac00511, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 15
+  penetration: 0
+  moveSpeed: 0
+  health: 0
+  currentHealth: 0
+  viewRange: 15
+  fireRange: 10
+  armor: 0
+  reloadSpeed: 0
 --- !u!4 &1147729276 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3662226576216038548, guid: 24f92c263c480364c8506daa3a0cbfc8,

@@ -46,8 +46,8 @@ public class ResultManager : MonoBehaviour
             Respawning();
         }
 
-        SpawnBox();
-        ChaosSpawner();
+        //SpawnBox();
+        //ChaosSpawner();
         
     }
 
