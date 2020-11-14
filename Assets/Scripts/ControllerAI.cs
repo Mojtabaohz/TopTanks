@@ -7,13 +7,13 @@ public class ControllerAI : MonoBehaviour
 {
     [Header("Navigation")]
     [SerializeField]
-    private NavMeshAgent m_NavMeshAgent;
+    private NavMeshAgent navAgent;
     [SerializeField]
     private GameObject m_Target;
     //[SerializeField]
     //private Animation m_TargetAnimation;
     [SerializeField]
-    private float m_DetectionRange;
+    private float viewRange;
     [SerializeField]
     private float m_DistanceToTarget; //I am using this variable to see in realtime what the distance is between the characters when the scene is played. This is so that I can tweak my stopping distance and weapon throw distance in the future functions
     [SerializeField]
@@ -26,7 +26,7 @@ public class ControllerAI : MonoBehaviour
     //[SerializeField]
     //private GameObject m_BulletPrefab;
     [SerializeField]
-    private float m_WeaponThrowRange = 15f;
+    private float fireRange = 15f;
      //The character needs to know when to start the weapon attack, so I use this as the range within the BulletAttack() function
 
     //[SerializeField]
@@ -40,9 +40,9 @@ public class ControllerAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        m_WeaponThrowRange = gameObject.GetComponent<TanksAttr>().fireRange;
-        m_DetectionRange = gameObject.GetComponent<TanksAttr>().viewRange;
-        m_NavMeshAgent = GetComponent<NavMeshAgent>();
+        fireRange = gameObject.GetComponent<TanksAttr>().fireRange;
+        viewRange = gameObject.GetComponent<TanksAttr>().viewRange;
+        navAgent = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
@@ -54,7 +54,7 @@ public class ControllerAI : MonoBehaviour
         
         DistanceDetection();
         if((gameObject.GetComponent<HealthBar>().currentHealth > m_RetreatHealth) ){
-            gameObject.GetComponent<NavMeshAgent>().stoppingDistance = m_WeaponThrowRange;
+            gameObject.GetComponent<NavMeshAgent>().stoppingDistance = fireRange;
             MoveToTarget();
         }
         
@@ -66,8 +66,8 @@ public class ControllerAI : MonoBehaviour
 
     void MoveToTarget(){
         
-        if(m_WeaponThrowRange < m_DistanceToTarget){
-            m_NavMeshAgent.SetDestination(m_Target.transform.position);
+        if(fireRange < m_DistanceToTarget){
+            navAgent.SetDestination(m_Target.transform.position);
         }
         else
         {
@@ -77,11 +77,6 @@ public class ControllerAI : MonoBehaviour
         
 
     }
-    // draw view range and shoot range of tanks in debug mode.
-    void OnDrawGizmos(){
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(gameObject.transform.position,m_DetectionRange);
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(gameObject.transform.position,m_WeaponThrowRange);
-    }
+    
+
 }
