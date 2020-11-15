@@ -508,10 +508,12 @@ GameObject:
   - component: {fileID: 1810573814985129778}
   - component: {fileID: 4602855804200559657}
   - component: {fileID: -5808763695492717190}
-  - component: {fileID: -2287614290808857212}
   - component: {fileID: -6530787786038264053}
   - component: {fileID: 6357624233164546300}
   - component: {fileID: 7530527488691860665}
+  - component: {fileID: 397143207}
+  - component: {fileID: 397143208}
+  - component: {fileID: 397143209}
   m_Layer: 0
   m_Name: TankFree_Red
   m_TagString: Player
@@ -629,6 +631,7 @@ MonoBehaviour:
     m_NumColorKeys: 3
     m_NumAlphaKeys: 2
   fill: {fileID: 7754332665021054464}
+  DestroySound: {fileID: 0}
 --- !u!114 &-5808763695492717190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -655,21 +658,9 @@ MonoBehaviour:
   ShootSound: {fileID: 0}
   ReloadSound: {fileID: 0}
   UziSound: {fileID: 0}
+  SniperSound: {fileID: 0}
   moveSpeed: 8
---- !u!114 &-2287614290808857212
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8294556045859820713}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cda8f745ac3e8040ad790a82b745b67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  forward: {x: 0, y: 0, z: 0}
-  right: {x: 0, y: 0, z: 0}
+  MS: 8
 --- !u!54 &-6530787786038264053
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -711,7 +702,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f4e997c2167995546b7173722e3ed98e, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.066
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -795,6 +786,69 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!195 &397143207
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8294556045859820713}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 1.2931726
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1.2518296
+  m_BaseOffset: 0.6259148
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &397143208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8294556045859820713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f083926ecdb4cb40957f02793fa721c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  navAgent: {fileID: 0}
+  m_Target: {fileID: 0}
+  viewRange: 0
+  m_DistanceToTarget: 0
+  m_HomeBase: {fileID: 0}
+  m_Health: 20
+  m_RetreatHealth: 5
+  fireRange: 15
+--- !u!114 &397143209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8294556045859820713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6ab5a4fa9ea8544fa6c0b2eaac00511, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  penetration: 0
+  moveSpeed: 0
+  health: 0
+  currentHealth: 0
+  viewRange: 10
+  fireRange: 5
+  armor: 0
+  reloadSpeed: 0
 --- !u!1 &8499956493740166977
 GameObject:
   m_ObjectHideFlags: 0

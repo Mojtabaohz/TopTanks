@@ -16,9 +16,8 @@ public class ControllerAI : MonoBehaviour
     private float viewRange;
     [SerializeField]
     private float m_DistanceToTarget; //I am using this variable to see in realtime what the distance is between the characters when the scene is played. This is so that I can tweak my stopping distance and weapon throw distance in the future functions
-    [SerializeField]
-    private GameObject m_HomeBase;
-    [Space(8)]
+
+    [Space(10)]
     [SerializeField]
     private float m_Health = 20f;
     [SerializeField]
@@ -28,14 +27,17 @@ public class ControllerAI : MonoBehaviour
     [SerializeField]
     private float fireRange = 15f;
      //The character needs to know when to start the weapon attack, so I use this as the range within the BulletAttack() function
-
+    [Header("Spotted Enemies")]
+    [SerializeField]
+    
+    //public List<GameObject> spottedEnemies = new List<GameObject>();
     //[SerializeField]
     //private float m_BulletAttackRate = 2; //How often should the weapons fire. This can be adjusted per character, and I have set it to every 2 “seconds” for now.
 
     //[SerializeField]
     //private float m_BulletAttackTracker = 0; //This variable has a timer functionality, and deltaTime gets added to this variable in the BulletAttack() function. As soon as m_BulletAttackTracker is equal or greater than m_BulletAttackRate(currently 2), it will reset the value for m_BulletAttackTracker timer back to 0
 
-    RaycastHit hit ;
+    private int counter = 0;
     
     // Start is called before the first frame update
     void Start()
@@ -48,10 +50,8 @@ public class ControllerAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
-        Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.white);
         
-        
+        SpotEnemies();
         DistanceDetection();
         if((gameObject.GetComponent<HealthBar>().currentHealth > m_RetreatHealth) ){
             gameObject.GetComponent<NavMeshAgent>().stoppingDistance = fireRange;
@@ -71,11 +71,28 @@ public class ControllerAI : MonoBehaviour
         }
         else
         {
-            
             gameObject.GetComponent<shooting>().Shoot();
         }
         
 
+    }
+
+    
+    void SpotEnemies(){
+        Collider[] allObjects = Physics.OverlapSphere(gameObject.transform.position, viewRange);
+        foreach(Collider co in allObjects)
+       {
+           if(co.gameObject.GetComponent<TanksAttr>() != null){
+               
+                
+                if((co.GetComponent<TanksAttr>().team != gameObject.GetComponent<TanksAttr>().team) && !co.gameObject.GetComponent<TanksAttr>().spotted){
+                    gameObject.GetComponentInParent<EnemyList>().spottedEnemies.Add(co.gameObject);
+                    co.gameObject.GetComponent<TanksAttr>().spotted = true;
+                }
+            }
+          
+        }
+        
     }
     
 
