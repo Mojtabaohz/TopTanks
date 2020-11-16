@@ -2513,9 +2513,21 @@ PrefabInstance:
       propertyPath: navAgent
       value: 
       objectReference: {fileID: 1147729269}
+    - target: {fileID: 1147729268, guid: 24f92c263c480364c8506daa3a0cbfc8, type: 3}
+      propertyPath: currentTarget
+      value: 
+      objectReference: {fileID: 397143206}
     - target: {fileID: 1147729270, guid: 24f92c263c480364c8506daa3a0cbfc8, type: 3}
       propertyPath: team
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147729270, guid: 24f92c263c480364c8506daa3a0cbfc8, type: 3}
+      propertyPath: viewRange
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147729270, guid: 24f92c263c480364c8506daa3a0cbfc8, type: 3}
+      propertyPath: fireRange
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1039908711273843350, guid: 24f92c263c480364c8506daa3a0cbfc8,
         type: 3}
@@ -2702,6 +2714,10 @@ PrefabInstance:
       propertyPath: navAgent
       value: 
       objectReference: {fileID: 397143207}
+    - target: {fileID: 397143208, guid: b6baf90ec56537a49bc160269453f0bd, type: 3}
+      propertyPath: currentTarget
+      value: 
+      objectReference: {fileID: 1147729267}
     - target: {fileID: 397143209, guid: b6baf90ec56537a49bc160269453f0bd, type: 3}
       propertyPath: fireRange
       value: 8
@@ -4256,6 +4272,10 @@ PrefabInstance:
       propertyPath: m_HomeBase
       value: 
       objectReference: {fileID: 209650241}
+    - target: {fileID: 397143208, guid: b6baf90ec56537a49bc160269453f0bd, type: 3}
+      propertyPath: currentTarget
+      value: 
+      objectReference: {fileID: 1601835353}
     - target: {fileID: 397143209, guid: b6baf90ec56537a49bc160269453f0bd, type: 3}
       propertyPath: damage
       value: 15
@@ -5108,9 +5128,13 @@ PrefabInstance:
       propertyPath: m_HomeBase
       value: 
       objectReference: {fileID: 209650241}
+    - target: {fileID: 397143208, guid: b6baf90ec56537a49bc160269453f0bd, type: 3}
+      propertyPath: currentTarget
+      value: 
+      objectReference: {fileID: 1368019593}
     - target: {fileID: 397143209, guid: b6baf90ec56537a49bc160269453f0bd, type: 3}
       propertyPath: fireRange
-      value: 20
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 397143209, guid: b6baf90ec56537a49bc160269453f0bd, type: 3}
       propertyPath: damage
@@ -7829,13 +7853,21 @@ PrefabInstance:
       propertyPath: m_Health
       value: 1000
       objectReference: {fileID: 0}
+    - target: {fileID: 1147729268, guid: 24f92c263c480364c8506daa3a0cbfc8, type: 3}
+      propertyPath: currentTarget
+      value: 
+      objectReference: {fileID: 849164245}
     - target: {fileID: 1147729270, guid: 24f92c263c480364c8506daa3a0cbfc8, type: 3}
       propertyPath: fireRange
-      value: 12
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1147729270, guid: 24f92c263c480364c8506daa3a0cbfc8, type: 3}
       propertyPath: team
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147729270, guid: 24f92c263c480364c8506daa3a0cbfc8, type: 3}
+      propertyPath: viewRange
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1039908711273843350, guid: 24f92c263c480364c8506daa3a0cbfc8,
         type: 3}
@@ -8588,6 +8620,18 @@ PrefabInstance:
       propertyPath: m_Target
       value: 
       objectReference: {fileID: 690264487}
+    - target: {fileID: 1147729268, guid: 24f92c263c480364c8506daa3a0cbfc8, type: 3}
+      propertyPath: currentTarget
+      value: 
+      objectReference: {fileID: 690264487}
+    - target: {fileID: 1147729270, guid: 24f92c263c480364c8506daa3a0cbfc8, type: 3}
+      propertyPath: viewRange
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147729270, guid: 24f92c263c480364c8506daa3a0cbfc8, type: 3}
+      propertyPath: fireRange
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1039908711273843350, guid: 24f92c263c480364c8506daa3a0cbfc8,
         type: 3}
       propertyPath: DestroySound
