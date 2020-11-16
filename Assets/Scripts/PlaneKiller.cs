@@ -8,7 +8,7 @@ public class PlaneKiller : MonoBehaviour
     // Start is called before the first frame update
     void OnTriggerEnter(Collider other){
         if(other.gameObject.tag.Equals("Player")){
-            other.GetComponent<HealthBar>().TakeDamage(damage);
+           // other.GetComponent<HealthBar>().TakeDamage(damage);
         }
             
     }

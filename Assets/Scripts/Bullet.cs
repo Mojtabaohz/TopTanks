@@ -33,7 +33,7 @@ public class Bullet : MonoBehaviour
     void OnTriggerEnter(Collider other){
         
         if(collisionEnable & !explosive){
-            if(other.gameObject.tag.Equals("Player") || other.gameObject.tag.Equals("Base")){
+            if(other.gameObject.tag.Equals("Player")){
                 DoDamage(dmg,other);
                 //Debug.Log("Damage Done");
                 gameObject.SetActive(false);

@@ -16,7 +16,7 @@ public class TanksAttr : MonoBehaviour
     public float penetration;
     [SerializeField]
     public float fireRange;
-        [SerializeField]
+    [SerializeField]
     public float viewRange;
 
     [SerializeField]

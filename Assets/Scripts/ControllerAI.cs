@@ -50,7 +50,6 @@ public class ControllerAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
         SpotEnemies();
         DistanceDetection();
         if((gameObject.GetComponent<HealthBar>().currentHealth > m_RetreatHealth) ){
@@ -77,23 +76,20 @@ public class ControllerAI : MonoBehaviour
 
     }
 
-    
+
     void SpotEnemies(){
         Collider[] allObjects = Physics.OverlapSphere(gameObject.transform.position, viewRange);
-        foreach(Collider co in allObjects)
-       {
+        foreach(Collider co in allObjects){
            if(co.gameObject.GetComponent<TanksAttr>() != null){
-               
-                
                 if((co.GetComponent<TanksAttr>().team != gameObject.GetComponent<TanksAttr>().team) && !co.gameObject.GetComponent<TanksAttr>().spotted){
                     gameObject.GetComponentInParent<EnemyList>().spottedEnemies.Add(co.gameObject);
                     co.gameObject.GetComponent<TanksAttr>().spotted = true;
                 }
             }
-          
-        }
-        
+        }   
     }
+
+    
     
 
 }

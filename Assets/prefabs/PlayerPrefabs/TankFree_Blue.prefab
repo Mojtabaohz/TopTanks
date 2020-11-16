@@ -349,7 +349,7 @@ MonoBehaviour:
   reloadSpeed: 4
   Buff: 0
   buffDuration: 0
-  shootSign: {fileID: 7613669449680150306}
+  shootSign: {fileID: 0}
   ShootSound: {fileID: 0}
   ReloadSound: {fileID: 0}
   UziSound: {fileID: 0}
@@ -493,14 +493,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f083926ecdb4cb40957f02793fa721c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navAgent: {fileID: 0}
+  navAgent: {fileID: 1147729269}
   m_Target: {fileID: 0}
   viewRange: 0
   m_DistanceToTarget: 0
-  m_HomeBase: {fileID: 0}
   m_Health: 20
   m_RetreatHealth: 5
   fireRange: 15
+  counter: 0
 --- !u!195 &1147729269
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -535,15 +535,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6ab5a4fa9ea8544fa6c0b2eaac00511, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  team: 1
   damage: 15
   penetration: 0
+  fireRange: 30
+  viewRange: 15
+  reloadSpeed: 0
   moveSpeed: 0
   health: 0
-  currentHealth: 0
-  viewRange: 15
-  fireRange: 10
   armor: 0
-  reloadSpeed: 0
+  currentHealth: 0
+  spotted: 0
 --- !u!1 &3697537848374848523
 GameObject:
   m_ObjectHideFlags: 0
@@ -953,12 +955,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee8812b7ed6fde04398352a4b6c7b41b, type: 3}
---- !u!1 &7613669449680150306 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8913635275789392558, guid: ee8812b7ed6fde04398352a4b6c7b41b,
-    type: 3}
-  m_PrefabInstance: {fileID: 1304539794520180108}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7613669449680150309 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8913635275789392553, guid: ee8812b7ed6fde04398352a4b6c7b41b,

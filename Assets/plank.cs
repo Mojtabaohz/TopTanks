@@ -25,7 +25,7 @@ public class plank : MonoBehaviour
         }
     }
     void OnTriggerEnter(Collider other){
-        other.gameObject.GetComponent<HealthBar>().TakeDamage(damage);
+        //other.gameObject.GetComponent<HealthBar>().TakeDamage(damage);
     }
 
 

@@ -2627,6 +2627,11 @@ PrefabInstance:
       propertyPath: playerBase
       value: 
       objectReference: {fileID: 919132149624100937}
+    - target: {fileID: 3930900956230948718, guid: 24f92c263c480364c8506daa3a0cbfc8,
+        type: 3}
+      propertyPath: shootSign
+      value: 
+      objectReference: {fileID: 1132789984}
     - target: {fileID: 4289363734568888395, guid: 24f92c263c480364c8506daa3a0cbfc8,
         type: 3}
       propertyPath: cam
@@ -5617,6 +5622,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 3070341720682433644, guid: d9012dec9127a134286f9c6dfdba4ef6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3583931853556095616, guid: d9012dec9127a134286f9c6dfdba4ef6,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -5640,19 +5650,20 @@ PrefabInstance:
     - target: {fileID: 5217257881502324538, guid: d9012dec9127a134286f9c6dfdba4ef6,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5217257881502324538, guid: d9012dec9127a134286f9c6dfdba4ef6,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8053062816098482435, guid: d9012dec9127a134286f9c6dfdba4ef6,
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 8
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 25765175281699749, guid: d9012dec9127a134286f9c6dfdba4ef6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d9012dec9127a134286f9c6dfdba4ef6, type: 3}
 --- !u!1001 &1013077409
 PrefabInstance:
@@ -7814,9 +7825,13 @@ PrefabInstance:
       propertyPath: m_HomeBase
       value: 
       objectReference: {fileID: 919132149624100937}
+    - target: {fileID: 1147729268, guid: 24f92c263c480364c8506daa3a0cbfc8, type: 3}
+      propertyPath: m_Health
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 1147729270, guid: 24f92c263c480364c8506daa3a0cbfc8, type: 3}
       propertyPath: fireRange
-      value: 20
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1147729270, guid: 24f92c263c480364c8506daa3a0cbfc8, type: 3}
       propertyPath: team
@@ -7827,6 +7842,11 @@ PrefabInstance:
       propertyPath: DestroySound
       value: 
       objectReference: {fileID: 2000075318}
+    - target: {fileID: 1039908711273843350, guid: 24f92c263c480364c8506daa3a0cbfc8,
+        type: 3}
+      propertyPath: maxHealth
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 2957297014459795885, guid: 24f92c263c480364c8506daa3a0cbfc8,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -8136,12 +8156,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31ec5e3e9609792428e2b839ec43876e, type: 3}
---- !u!1 &1475370341 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2781285342070767222, guid: 24f92c263c480364c8506daa3a0cbfc8,
-    type: 3}
-  m_PrefabInstance: {fileID: 1601835350}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1500378796 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3581160675807823857, guid: 435252206ce9d554b8bacb9eb901059b,
@@ -8571,25 +8585,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 1975576038}
     m_Modifications:
     - target: {fileID: 1147729268, guid: 24f92c263c480364c8506daa3a0cbfc8, type: 3}
-      propertyPath: navAgent
-      value: 
-      objectReference: {fileID: 1601835352}
-    - target: {fileID: 1147729268, guid: 24f92c263c480364c8506daa3a0cbfc8, type: 3}
       propertyPath: m_Target
       value: 
       objectReference: {fileID: 690264487}
-    - target: {fileID: 1147729268, guid: 24f92c263c480364c8506daa3a0cbfc8, type: 3}
-      propertyPath: m_HomeBase
-      value: 
-      objectReference: {fileID: 919132149624100937}
-    - target: {fileID: 1147729270, guid: 24f92c263c480364c8506daa3a0cbfc8, type: 3}
-      propertyPath: fireRange
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147729270, guid: 24f92c263c480364c8506daa3a0cbfc8, type: 3}
-      propertyPath: team
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1039908711273843350, guid: 24f92c263c480364c8506daa3a0cbfc8,
         type: 3}
       propertyPath: DestroySound
@@ -8609,16 +8607,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BlueTank02
-      objectReference: {fileID: 0}
-    - target: {fileID: 3136332484790545189, guid: 24f92c263c480364c8506daa3a0cbfc8,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 3136332484790545189, guid: 24f92c263c480364c8506daa3a0cbfc8,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3662226576216038548, guid: 24f92c263c480364c8506daa3a0cbfc8,
         type: 3}
@@ -8677,11 +8665,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3930900956230948718, guid: 24f92c263c480364c8506daa3a0cbfc8,
         type: 3}
-      propertyPath: bulletEmitter
-      value: 
-      objectReference: {fileID: 1475370341}
-    - target: {fileID: 3930900956230948718, guid: 24f92c263c480364c8506daa3a0cbfc8,
-        type: 3}
       propertyPath: playerBase
       value: 
       objectReference: {fileID: 919132149624100937}
@@ -8720,12 +8703,6 @@ PrefabInstance:
 --- !u!4 &1601835351 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3662226576216038548, guid: 24f92c263c480364c8506daa3a0cbfc8,
-    type: 3}
-  m_PrefabInstance: {fileID: 1601835350}
-  m_PrefabAsset: {fileID: 0}
---- !u!195 &1601835352 stripped
-NavMeshAgent:
-  m_CorrespondingSourceObject: {fileID: 1147729269, guid: 24f92c263c480364c8506daa3a0cbfc8,
     type: 3}
   m_PrefabInstance: {fileID: 1601835350}
   m_PrefabAsset: {fileID: 0}
@@ -11078,6 +11055,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 3070341720682433644, guid: d9012dec9127a134286f9c6dfdba4ef6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3583931853556095616, guid: d9012dec9127a134286f9c6dfdba4ef6,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -11101,12 +11083,12 @@ PrefabInstance:
     - target: {fileID: 5217257881502324538, guid: d9012dec9127a134286f9c6dfdba4ef6,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5217257881502324538, guid: d9012dec9127a134286f9c6dfdba4ef6,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8053062816098482435, guid: d9012dec9127a134286f9c6dfdba4ef6,
         type: 3}
@@ -11118,7 +11100,8 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 25765175281699749, guid: d9012dec9127a134286f9c6dfdba4ef6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d9012dec9127a134286f9c6dfdba4ef6, type: 3}
 --- !u!4 &543450652124297601 stripped
 Transform:
