@@ -25,7 +25,8 @@ public class TanksAttr : MonoBehaviour
     [SerializeField]
     public float moveSpeed;
     [Space(10)]
-    
+    [SerializeField]
+    public bool alive;
     [SerializeField]
     public float health;
 
@@ -36,7 +37,7 @@ public class TanksAttr : MonoBehaviour
     public float currentHealth;
     
     [Space(10)]
-    public bool spotted = false;
+    public bool spotted;
     
    
     
@@ -44,7 +45,8 @@ public class TanksAttr : MonoBehaviour
 
     void Start()
     {
-        
+        alive = true;
+        spotted = false;
     }
 
     // Update is called once per frame
