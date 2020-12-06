@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d24dae9d-738a-4fe8-9177-4dd0b4df0197" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/EffectExamples/Fire &amp; Explosion Effects/Materials/Embers.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/EffectExamples/Fire &amp; Explosion Effects/Materials/Embers.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/EffectExamples/Fire &amp; Explosion Effects/Materials/PlasmaExplosion.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/EffectExamples/Fire &amp; Explosion Effects/Materials/PlasmaExplosion.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/EffectExamples/Fire &amp; Explosion Effects/Materials/PlasmaFire.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/EffectExamples/Fire &amp; Explosion Effects/Materials/PlasmaFire.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/EffectExamples/Magic Effects/Materials/IceTrail.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/EffectExamples/Magic Effects/Materials/IceTrail.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/EffectExamples/Misc Effects/Materials/SpawnTrail.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/EffectExamples/Misc Effects/Materials/SpawnTrail.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/EffectExamples/Smoke &amp; Steam Effects/Materials/RockDebris.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/EffectExamples/Smoke &amp; Steam Effects/Materials/RockDebris.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/EffectExamples/Weapon Effects/Materials/RockDebris.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/EffectExamples/Weapon Effects/Materials/RockDebris.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FullTiltBoogie/Materials/BokehHex.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FullTiltBoogie/Materials/BokehHex.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/ShootSign.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/ShootSign.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FirstScene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FirstScene.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TanksAttr.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TanksAttr.cs" afterDir="false" />
-    </list>
+    <list default="true" id="d24dae9d-738a-4fe8-9177-4dd0b4df0197" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -74,7 +62,7 @@
       <updated>1607255152259</updated>
       <workItem from="1607255156746" duration="274000" />
       <workItem from="1607257757865" duration="279000" />
-      <workItem from="1607258284692" duration="717000" />
+      <workItem from="1607258284692" duration="976000" />
     </task>
     <servers />
   </component>
