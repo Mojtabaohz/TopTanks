@@ -81,7 +81,7 @@ public class ControllerAI : MonoBehaviour
     }
 
     void FindTarget(){
-        
+        //get new target based on visibility
     }
 
 
