@@ -16,7 +16,7 @@ public class shooting : MonoBehaviour
     protected float buffTimer;
     public bool Buff;
     public float buffDuration;
-    public GameObject shootSign;
+    //public GameObject shootSign;
     public AudioSource ShootSound;
     public AudioSource ReloadSound;
     public AudioSource UziSound;
@@ -96,7 +96,7 @@ public class shooting : MonoBehaviour
                     ammoCount -= 1;
                 }
                 loaded = true;
-                shootSign.SetActive(true);
+                //shootSign.SetActive(true);
             }
         }
         else{
@@ -144,7 +144,9 @@ public class shooting : MonoBehaviour
 
     public void Unload(){
         loaded = false;
-        shootSign.SetActive(false);
+        //
+        //shootSign.SetActive(false);
+        
 
     }
    

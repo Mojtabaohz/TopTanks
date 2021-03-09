@@ -54,7 +54,7 @@ public class ResultManager : MonoBehaviour
     void Respawn(GameObject obj, Vector3 RP){
         obj.GetComponent<HealthBar>().alive = true;
         obj.GetComponent<shooting>().loaded = false;
-        obj.GetComponent<shooting>().shootSign.SetActive(false);
+        //obj.GetComponent<shooting>().shootSign.SetActive(false);
         obj.GetComponent<Transform>().position = RP;
         obj.GetComponent<HealthBar>().SetHealth(obj.GetComponent<HealthBar>().maxHealth);
         obj.SetActive(true);
