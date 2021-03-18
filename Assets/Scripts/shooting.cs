@@ -77,6 +77,44 @@ public class shooting : MonoBehaviour
                 //ReloadSound.Play();
             }
     }
+    
+    void Shooting(Vector3 target){
+        if(loaded){
+            Unload();
+            //GameObject TemporaryBullethandler;
+            //TemporaryBullethandler = gameObject.transform.GetChild((gameObject.transform.childCount-1)).gameObject;
+            //TemporaryBullethandler.transform.parent = null;
+           // TemporaryBullethandler.GetComponent<Rigidbody>().useGravity = true;
+            //TemporaryBullethandler.GetComponent<Rigidbody>().detectCollisions = true;
+            //Instantiate(bullet,bulletEmitter.transform.position, bulletEmitter.transform.rotation) as GameObject;
+
+            //TemporaryBullethandler.transform.Rotate(Vector3.left * 90);
+
+            Rigidbody TempRigidbody;
+            //TempRigidbody = TemporaryBullethandler.GetComponent<Rigidbody>();
+            TempRigidbody.AddForce(transform.forward * (bulletSpeed + moveSpeed));
+            if(bullet.name == "bullet" || bullet.name == "Bomb"){
+                TempRigidbody.AddForce(transform.up *  (250));
+            }
+            
+            //TemporaryBullethandler.GetComponent<Bullet>().collisionEnable = true;
+            //Destroy(TemporaryBullethandler, 6.0f);
+            if (bulletSpeed<=1500){
+                //ShootSound.Play(); 
+            }
+            else if (bulletSpeed <= 2000) {
+                //UziSound.Play();
+            } else {
+                //SniperSound.Play();
+            }                
+        }
+        else{
+
+            //print("shooting is on cooldown");
+            //ReloadSound.Play();
+        }
+    }
+    
 
     void Reload(bool _loaded){
         if(!_loaded){

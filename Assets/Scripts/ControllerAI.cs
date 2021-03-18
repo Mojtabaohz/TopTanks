@@ -52,10 +52,10 @@ public class ControllerAI : MonoBehaviour
     {
         SpotEnemies();
         DistanceDetection();
-        if((gameObject.GetComponent<HealthBar>().currentHealth > m_RetreatHealth) ){
-            gameObject.GetComponent<NavMeshAgent>().stoppingDistance = fireRange;
-            MoveToTarget();
-        }
+        //if((gameObject.GetComponent<HealthBar>().currentHealth > m_RetreatHealth) ){
+         //   gameObject.GetComponent<NavMeshAgent>().stoppingDistance = fireRange;
+        MoveToTarget();
+        //}
         
     }
     
@@ -74,6 +74,8 @@ public class ControllerAI : MonoBehaviour
         }
         else
         {
+            //Debug.Log("stop and shoot");
+            navAgent.Stop(true);
             gameObject.GetComponent<shooting>().Shoot();
         }
         
