@@ -22,7 +22,7 @@ public class AmmoBox : MonoBehaviour
                 obj.gameObject.GetComponent<shooting>().Unload();
             }
             
-            obj.GetComponent<shooting>().ammoCount = ammoCount;
+            //obj.GetComponent<shooting>().ammoCount = ammoCount;
             obj.GetComponent<shooting>().bulletSpeed = bulletSpeed;
             obj.GetComponent<shooting>().bullet = bullet;
             obj.GetComponent<shooting>().dmg = dmg;

@@ -163,8 +163,8 @@ MonoBehaviour:
   team: 1
   damage: 15
   penetration: 0
-  fireRange: 10
-  viewRange: 20
+  fireRange: 30
+  viewRange: 35
   reloadSpeed: 0
   moveSpeed: 0
   alive: 0
@@ -209,7 +209,7 @@ MonoBehaviour:
   navAgent: {fileID: 7785995245325043256}
   currentTarget: {fileID: 0}
   viewRange: 0
-  m_DistanceToTarget: 0
+  m_DistanceToTarget: 10
   m_Health: 1000
   m_RetreatHealth: 5
   fireRange: 15
@@ -230,17 +230,11 @@ MonoBehaviour:
   bullet: {fileID: 0}
   playerBase: {fileID: 0}
   dmg: 0
-  bulletSpeed: 100
+  bulletSpeed: 800
   loaded: 1
-  ammoCount: 0
   reloadSpeed: 4
   Buff: 0
   buffDuration: 0
-  shootSign: {fileID: 0}
-  ShootSound: {fileID: 0}
-  ReloadSound: {fileID: 0}
-  UziSound: {fileID: 0}
-  SniperSound: {fileID: 0}
   moveSpeed: 8
   MS: 8
 --- !u!114 &7785995245325043255
@@ -541,7 +535,7 @@ BoxCollider:
   m_GameObject: {fileID: 3634934406329537330}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -639,7 +633,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 30, y: 15, z: 30}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6585613461288251545
 GameObject:

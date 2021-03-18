@@ -110,10 +110,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 854921418072853638}
-  bulletSpeed: 4000
-  dmg: 5
-  aoe: 0
-  aoeDmg: 0
+  bulletSpeed: 1000
+  dmg: 20
   explosive: 0
   explosionPower: 10
   radius: 5

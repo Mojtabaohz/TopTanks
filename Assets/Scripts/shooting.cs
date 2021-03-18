@@ -10,17 +10,17 @@ public class shooting : MonoBehaviour
     public int dmg;
     public float bulletSpeed = 100f;
     public bool loaded = true;
-    public int ammoCount = 0 ;
+    //public int ammoCount = 0 ;
     public float reloadSpeed = 4;
     protected float Timer;
     protected float buffTimer;
     public bool Buff;
     public float buffDuration;
     //public GameObject shootSign;
-    public AudioSource ShootSound;
-    public AudioSource ReloadSound;
-    public AudioSource UziSound;
-    public AudioSource SniperSound;
+    //public AudioSource ShootSound;
+    //public AudioSource ReloadSound;
+    //public AudioSource UziSound;
+    //public AudioSource SniperSound;
     public float moveSpeed;
     public float MS = 4f;
     // Start is called before the first frame update
@@ -63,12 +63,12 @@ public class shooting : MonoBehaviour
             TemporaryBullethandler.GetComponent<Bullet>().collisionEnable = true;
             Destroy(TemporaryBullethandler, 6.0f);
                 if (bulletSpeed<=1500){
-                    ShootSound.Play(); 
+                    //ShootSound.Play(); 
                 }
                 else if (bulletSpeed <= 2000) {
-                    UziSound.Play();
+                    //UziSound.Play();
                 } else {
-                    SniperSound.Play();
+                    //SniperSound.Play();
                 }                
             }
             else{
@@ -83,18 +83,18 @@ public class shooting : MonoBehaviour
             Timer += Time.deltaTime;
             if(Timer >= reloadSpeed){
                 Timer = 0; 
-                if(ammoCount < 0){
+                //if(ammoCount < 0){
                     BulletInstantiate(gameObject.GetComponent<Collider>());
-                }
-                else if(ammoCount>0){
-                    BulletInstantiate(gameObject.GetComponent<Collider>());
-                    ammoCount -= 1;
-                }
-                else if(ammoCount == 0 ){
-                    SetDefaultWeapon(this.gameObject);
-                    BulletInstantiate(gameObject.GetComponent<Collider>());
-                    ammoCount -= 1;
-                }
+                //}
+                //else if(ammoCount>0){
+                    //BulletInstantiate(gameObject.GetComponent<Collider>());
+                    //ammoCount -= 1;
+                //}
+                //else if(ammoCount == 0 ){
+                    //SetDefaultWeapon(this.gameObject);
+                    //BulletInstantiate(gameObject.GetComponent<Collider>());
+                    //ammoCount -= 1;
+                //}
                 loaded = true;
                 //shootSign.SetActive(true);
             }
@@ -116,7 +116,7 @@ public class shooting : MonoBehaviour
     }
 
     public void SetDefaultWeapon(GameObject player){
-        player.GetComponent<shooting>().ammoCount = FindObjectOfType<ResultManager>().defaultWeapon.GetComponent<AmmoBox>().ammoCount;
+        //player.GetComponent<shooting>().ammoCount = FindObjectOfType<ResultManager>().defaultWeapon.GetComponent<AmmoBox>().ammoCount;
         player.GetComponent<shooting>().bulletSpeed = FindObjectOfType<ResultManager>().defaultWeapon.GetComponent<AmmoBox>().bulletSpeed;
         player.GetComponent<shooting>().bullet = FindObjectOfType<ResultManager>().defaultWeapon.GetComponent<AmmoBox>().bullet;
         player.GetComponent<shooting>().dmg = FindObjectOfType<ResultManager>().defaultWeapon.GetComponent<AmmoBox>().dmg;
