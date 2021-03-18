@@ -15,7 +15,7 @@ public class FirstScene : MonoBehaviour
     void Update()
     {
         if(Input.anyKey){
-            SceneManager.LoadScene("PlayScene");
+            SceneManager.LoadScene("CardDeck");
             
         }
     }
