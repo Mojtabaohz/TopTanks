@@ -40,8 +40,8 @@ public class Bullet : MonoBehaviour
                 
             }
         }
-        //DoDamage(damage,other);
-        
+        DoDamage(dmg,other);
+        Destroy(gameObject);
     }
 
 
