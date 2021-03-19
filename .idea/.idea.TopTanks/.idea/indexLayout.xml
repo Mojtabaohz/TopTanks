@@ -23,8 +23,11 @@
       <Path>.git</Path>
       <Path>.idea</Path>
       <Path>.vscode</Path>
+      <Path>Build</Path>
       <Path>Library</Path>
       <Path>Logs</Path>
+      <Path>Mayhem Island_Data</Path>
+      <Path>MonoBleedingEdge</Path>
       <Path>Temp</Path>
       <Path>obj</Path>
     </explicitExcludes>
