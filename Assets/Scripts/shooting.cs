@@ -5,10 +5,12 @@ using UnityEngine;
 public class shooting : MonoBehaviour
 {
     public GameObject bulletEmitter;
+    public Transform emitter;
+    public float bulletLifeTime = 2f;
     public GameObject bullet;
     public GameObject playerBase;
     public int dmg;
-    public float bulletSpeed = 100f;
+    public float bulletSpeed = 1f;
     public bool loaded = true;
     //public int ammoCount = 0 ;
     public float reloadSpeed = 4;
@@ -78,35 +80,17 @@ public class shooting : MonoBehaviour
             }
     }
     
-    void Shooting(Vector3 target){
+    public void Shooting2(){
         if(loaded){
             Unload();
-            GameObject TemporaryBullethandler;
-            TemporaryBullethandler = gameObject.transform.GetChild((gameObject.transform.childCount-1)).gameObject;
-            TemporaryBullethandler.transform.parent = null;
-            TemporaryBullethandler.GetComponent<Rigidbody>().useGravity = true;
-            TemporaryBullethandler.GetComponent<Rigidbody>().detectCollisions = true;
-            //Instantiate(bullet,bulletEmitter.transform.position, bulletEmitter.transform.rotation) as GameObject;
-
-            TemporaryBullethandler.transform.Rotate(Vector3.left * 90);
-
-            Rigidbody TempRigidbody;
-            TempRigidbody = TemporaryBullethandler.GetComponent<Rigidbody>();
-            TempRigidbody.AddForce(transform.forward * (bulletSpeed + moveSpeed));
-            if(bullet.name == "bullet" || bullet.name == "Bomb"){
-                TempRigidbody.AddForce(transform.up *  (250));
-            }
-            
-            TemporaryBullethandler.GetComponent<Bullet>().collisionEnable = true;
-            Destroy(TemporaryBullethandler, 6.0f);
-            if (bulletSpeed<=1500){
-                //ShootSound.Play(); 
-            }
-            else if (bulletSpeed <= 2000) {
-                //UziSound.Play();
-            } else {
-                //SniperSound.Play();
-            }                
+            GameObject projectile = Instantiate(bullet);
+            Physics.IgnoreCollision(projectile.GetComponent<Collider>(), emitter.parent.parent.GetComponent<Collider>());
+            projectile.transform.position = emitter.position;
+            Vector3 rotation = projectile.transform.rotation.eulerAngles;
+            projectile.transform.rotation = Quaternion.Euler(rotation.x, transform.eulerAngles.y, rotation.z);
+            projectile.GetComponent<Rigidbody>().AddForce(emitter.forward * bulletSpeed, ForceMode.Impulse);
+            Destroy(projectile, 2.0f);
+                            
         }
         else{
 
@@ -115,6 +99,25 @@ public class shooting : MonoBehaviour
         }
     }
     
+    /*
+     * Fire Method to experiment
+     */
+    public void Fire()
+    {
+        GameObject projectile = Instantiate(bullet);
+        //Physics.IgnoreCollision(projectile.GetComponent<Collider>(), emitter.parent.GetComponent<Collider>());
+        projectile.transform.position = emitter.position;
+        Vector3 rotation = projectile.transform.rotation.eulerAngles;
+        projectile.transform.rotation = Quaternion.Euler(rotation.x, transform.eulerAngles.y, rotation.z);
+        projectile.GetComponent<Rigidbody>().AddForce(emitter.forward * bulletSpeed, ForceMode.Impulse);
+        StartCoroutine(DestroyProjectile(projectile,bulletLifeTime));
+    }
+ 
+    private IEnumerator DestroyProjectile (GameObject projectile, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Destroy(projectile);
+    }
 
     void Reload(bool _loaded){
         if(!_loaded){
@@ -122,7 +125,7 @@ public class shooting : MonoBehaviour
             if(Timer >= reloadSpeed){
                 Timer = 0; 
                 //if(ammoCount < 0){
-                    BulletInstantiate(gameObject.GetComponent<Collider>());
+                    //BulletInstantiate(gameObject.GetComponent<Collider>());
                 //}
                 //else if(ammoCount>0){
                     //BulletInstantiate(gameObject.GetComponent<Collider>());

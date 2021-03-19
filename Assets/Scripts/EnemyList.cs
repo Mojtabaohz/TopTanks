@@ -7,6 +7,8 @@ public class EnemyList : MonoBehaviour
     [Header("Detected Enemies")]
     [SerializeField]
     public List<GameObject> spottedEnemies = new List<GameObject>();
+
+    public int score;
     
     public void UpdateEnemyList(GameObject obj){
         spottedEnemies.Add(obj);
@@ -16,6 +18,7 @@ public class EnemyList : MonoBehaviour
         }
         
     }
+    
     
     
      

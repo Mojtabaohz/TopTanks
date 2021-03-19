@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Assertions.Must;
 
 public class ControllerAI : MonoBehaviour
 {
@@ -17,13 +18,16 @@ public class ControllerAI : MonoBehaviour
     [SerializeField]
     private float m_DistanceToTarget; //I am using this variable to see in realtime what the distance is between the characters when the scene is played. This is so that I can tweak my stopping distance and weapon throw distance in the future functions
 
+    [SerializeField] private GameObject Turret;
+    /*
     [Space(10)]
     [SerializeField]
     private float m_Health = 20f;
     [SerializeField]
     private float m_RetreatHealth = 5f;
-    //[SerializeField]
-    //private GameObject m_BulletPrefab;
+    [SerializeField]
+    private GameObject m_BulletPrefab;
+    */
     [SerializeField]
     private float fireRange = 15f;
      //The character needs to know when to start the weapon attack, so I use this as the range within the BulletAttack() function
@@ -55,6 +59,7 @@ public class ControllerAI : MonoBehaviour
         //if((gameObject.GetComponent<HealthBar>().currentHealth > m_RetreatHealth) ){
          //   gameObject.GetComponent<NavMeshAgent>().stoppingDistance = fireRange;
         MoveToTarget();
+        TurretRotation(currentTarget);
         //}
         
     }
@@ -68,16 +73,43 @@ public class ControllerAI : MonoBehaviour
     }
 
     void MoveToTarget(){
-        
-        if(fireRange < m_DistanceToTarget){
-            navAgent.SetDestination(currentTarget.transform.position);
+        if (currentTarget.GetComponent<HealthBar>().alive)
+        {
+            if(fireRange < m_DistanceToTarget){
+                //navAgent.Stop(false);
+                navAgent.isStopped = false;
+                navAgent.speed = 4;
+                navAgent.SetDestination(currentTarget.transform.position);
+            }
+            else
+            {
+                //navAgent.Stop(true);
+                navAgent.speed = 0;
+                navAgent.isStopped = true;
+                //Debug.Log("stop and shoot");
+                //gameObject.GetComponent<shooting>().Shoot();
+                //gameObject.GetComponent<shooting>().Fire();
+                gameObject.GetComponent<shooting>().Shooting2();
+            }
         }
         else
         {
-            //Debug.Log("stop and shoot");
-            navAgent.Stop(true);
-            gameObject.GetComponent<shooting>().Shoot();
+            if (currentTarget == enemiesList[0])
+            {
+                currentTarget = enemiesList[1];
+            }
+            else if (currentTarget == enemiesList[1])
+            {
+                currentTarget = enemiesList[2];
+            }
+            else
+            {
+                currentTarget = enemiesList[0];
+            }
+            
+            navAgent.SetDestination(currentTarget.transform.position);
         }
+        
         
 
     }
@@ -109,6 +141,11 @@ public class ControllerAI : MonoBehaviour
         });
         
         
+    }
+
+    public void TurretRotation(GameObject target)
+    {
+        Turret.transform.LookAt(target.transform);
     }
 
     

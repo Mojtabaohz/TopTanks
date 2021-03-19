@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    [SerializeField]
+    [SerializeField] public GameObject BunkerRed;
+    public GameObject BunkerBlue;
     public int maxHealth;
     public int currentHealth;
     public bool alive = true;
@@ -26,6 +27,11 @@ public class HealthBar : MonoBehaviour
             DestroySound.Play();
             currentHealth = 0;
             alive = false;
+            
+            if (gameObject.GetComponent<shooting>().playerBase == BunkerRed)
+            {
+                FindObjectOfType<ResultManager>().score++;
+            }
             gameObject.SetActive(false);
             
         }

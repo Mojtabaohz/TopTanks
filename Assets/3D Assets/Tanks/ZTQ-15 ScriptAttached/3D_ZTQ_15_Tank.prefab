@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 7785995245325043255}
   m_Layer: 0
   m_Name: 3D_ZTQ_15_Tank
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -161,7 +161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   team: 1
-  damage: 15
+  damage: 50
   penetration: 0
   fireRange: 30
   viewRange: 35
@@ -210,8 +210,7 @@ MonoBehaviour:
   currentTarget: {fileID: 0}
   viewRange: 0
   m_DistanceToTarget: 10
-  m_Health: 1000
-  m_RetreatHealth: 5
+  Turret: {fileID: 5813006000270061055}
   fireRange: 15
   enemiesList: []
 --- !u!114 &7785995245325043252
@@ -227,10 +226,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletEmitter: {fileID: 5072013438031994357}
+  emitter: {fileID: 6394812628868693906}
+  bulletLifeTime: 2
   bullet: {fileID: 5969628609626260578, guid: 358cb4aac593f564cabdfaa2af538e11, type: 3}
   playerBase: {fileID: 0}
   dmg: 0
-  bulletSpeed: 800
+  bulletSpeed: 10
   loaded: 1
   reloadSpeed: 4
   Buff: 0
@@ -249,6 +250,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39512d4b7fcf2ff479189e07fe73bcae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BunkerRed: {fileID: 908285234350454512, guid: d9012dec9127a134286f9c6dfdba4ef6,
+    type: 3}
+  BunkerBlue: {fileID: 908285234350454512, guid: d9012dec9127a134286f9c6dfdba4ef6,
+    type: 3}
   maxHealth: 1000
   currentHealth: 0
   alive: 1

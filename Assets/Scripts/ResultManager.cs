@@ -7,6 +7,7 @@ public class ResultManager : MonoBehaviour
     public GameObject player01;
     
     public GameObject player02;
+    public int score;
     
 
     public int maxAmmoBox = 2;
@@ -25,21 +26,19 @@ public class ResultManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!player01.GetComponent<HealthBar>().alive || !player02.GetComponent<HealthBar>().alive){//base was here
+        
+        if(score >= 3){//base was here
             EndGame();
         }
         
-        if(!player01.GetComponent<HealthBar>().alive || !player02.GetComponent<HealthBar>().alive){
-            Respawning();
-        }
-
+       
         //SpawnBox();
         //ChaosSpawner();
         
     }
 
     void EndGame(){
-        
+        SceneManager.LoadScene("ResultScene");
     }
     
     void Respawning(){
