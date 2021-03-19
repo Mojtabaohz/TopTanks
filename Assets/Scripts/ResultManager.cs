@@ -9,11 +9,6 @@ public class ResultManager : MonoBehaviour
     public GameObject player02;
     public int score;
     
-
-    public int maxAmmoBox = 2;
-    private int spawnedBox = 0 ;
-    public GameObject defaultWeapon;
-
     protected float Timer;
     protected float ChaosTimer;
     
@@ -41,46 +36,5 @@ public class ResultManager : MonoBehaviour
         SceneManager.LoadScene("ResultScene");
     }
     
-    void Respawning(){
-        if(!player01.GetComponent<HealthBar>().alive){
-            //Respawn(player01, player01RP);
-        }
-        if(!player02.GetComponent<HealthBar>().alive){
-            //Respawn(player02, player02RP);
-        }
-    }
-
-    void Respawn(GameObject obj, Vector3 RP){
-        obj.GetComponent<HealthBar>().alive = true;
-        obj.GetComponent<shooting>().loaded = false;
-        //obj.GetComponent<shooting>().shootSign.SetActive(false);
-        obj.GetComponent<Transform>().position = RP;
-        obj.GetComponent<HealthBar>().SetHealth(obj.GetComponent<HealthBar>().maxHealth);
-        obj.SetActive(true);
-
-    }
-
-
-    public void PickUpBox(){
-        spawnedBox -= 1;
-    }
-
-    public void SpawnBox(){
-        if(spawnedBox <= maxAmmoBox ){
-        Timer += Time.deltaTime;
-            //if(Timer >= spawnRate){
-            //    Timer = 0;
-            //    spawnedBox += 1;
-            //    Instantiate(RandomBox(),RandomPos(),Quaternion.identity);
-            //}
-        }
-    }
-    public void ChaosSpawner(){
-        ChaosTimer += Time.deltaTime;
-            //if(ChaosTimer >= chaosrate){
-            //    GameObject tempChaos = Chaos[Random.Range(0,Chaos.Length)];
-            //    ChaosTimer = 0;
-            //    Instantiate(tempChaos,RandomPos(),Quaternion.identity);
-            //}
-    }
+    
 }

@@ -27,11 +27,9 @@ public class HealthBar : MonoBehaviour
             DestroySound.Play();
             currentHealth = 0;
             alive = false;
+            FindObjectOfType<ResultManager>().score++;
+            Debug.Log(FindObjectOfType<ResultManager>().score);
             
-            if (gameObject.GetComponent<shooting>().playerBase == BunkerRed)
-            {
-                FindObjectOfType<ResultManager>().score++;
-            }
             gameObject.SetActive(false);
             
         }

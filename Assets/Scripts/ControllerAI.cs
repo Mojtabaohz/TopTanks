@@ -73,6 +73,7 @@ public class ControllerAI : MonoBehaviour
     }
 
     void MoveToTarget(){
+        Debug.Log(currentTarget.GetComponent<HealthBar>().alive);
         if (currentTarget.GetComponent<HealthBar>().alive)
         {
             if(fireRange < m_DistanceToTarget){

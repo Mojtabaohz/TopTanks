@@ -254,7 +254,7 @@ MonoBehaviour:
     type: 3}
   BunkerBlue: {fileID: 908285234350454512, guid: d9012dec9127a134286f9c6dfdba4ef6,
     type: 3}
-  maxHealth: 1000
+  maxHealth: 500
   currentHealth: 0
   alive: 1
   slider: {fileID: 6434465794885021714}

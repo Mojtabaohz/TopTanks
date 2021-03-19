@@ -13,20 +13,6 @@ public class SetText : MonoBehaviour
     void Start()
     {
         tapScreen.SetActive(false);
-        
-        result.GetComponent<Text>().text = Manager.Instance.result.text;
-        if(result.GetComponent<Text>().text == "Red"){
-            GameObject.FindGameObjectWithTag("RedWin").SetActive(true);
-            GameObject.FindGameObjectWithTag("BlueWin").SetActive(false);
-            
-
-        }
-        else{
-            GameObject.FindGameObjectWithTag("RedWin").SetActive(false);
-            GameObject.FindGameObjectWithTag("BlueWin").SetActive(true);
-            
-            
-        }
         Invoke("DisplayText",3f);
         
     }
@@ -37,7 +23,8 @@ public class SetText : MonoBehaviour
         timer += Time.deltaTime;
         if(timer > delay){            
             if(Input.anyKey){
-            SceneManager.LoadScene("TitleScene");
+            SceneManager.LoadScene("CardDeck");
+            
             Debug.Log("activate the text");
             }
         }

@@ -24,11 +24,11 @@ public class BuffBox : MonoBehaviour
                 obj.GetComponent<shooting>().buffDuration = speedBuffDuration;
                 obj.GetComponent<shooting>().Buff = true;
             }
-            FindObjectOfType<ResultManager>().PickUpBox();
+            
             Destroy(gameObject);
         }
         else if(obj.gameObject.tag.Equals("bullet")){
-            FindObjectOfType<ResultManager>().PickUpBox();
+            
             Destroy(gameObject);
         }
         

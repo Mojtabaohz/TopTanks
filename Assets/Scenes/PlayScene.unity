@@ -395,6 +395,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 52621629}
+  - component: {fileID: 52621630}
   m_Layer: 0
   m_Name: GameManagement
   m_TagString: Untagged
@@ -419,6 +420,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &52621630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 52621628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb57875ad50d5a44fb5e3c537222ffb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  result: {fileID: 0}
 --- !u!1 &57479326
 GameObject:
   m_ObjectHideFlags: 0
@@ -6715,6 +6729,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spottedEnemies: []
+  score: 0
 --- !u!1001 &1162024306
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11412,6 +11427,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spottedEnemies: []
+  score: 0
 --- !u!1001 &1986113552
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12957,7 +12973,7 @@ PrefabInstance:
     - target: {fileID: 7785995245325043255, guid: 9a5db3ac7db36d642965f01a8316a1e3,
         type: 3}
       propertyPath: currentHealth
-      value: 1000
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7785995245325043257, guid: 9a5db3ac7db36d642965f01a8316a1e3,
         type: 3}

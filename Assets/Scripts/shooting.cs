@@ -156,13 +156,7 @@ public class shooting : MonoBehaviour
         }
     }
 
-    public void SetDefaultWeapon(GameObject player){
-        //player.GetComponent<shooting>().ammoCount = FindObjectOfType<ResultManager>().defaultWeapon.GetComponent<AmmoBox>().ammoCount;
-        player.GetComponent<shooting>().bulletSpeed = FindObjectOfType<ResultManager>().defaultWeapon.GetComponent<AmmoBox>().bulletSpeed;
-        player.GetComponent<shooting>().bullet = FindObjectOfType<ResultManager>().defaultWeapon.GetComponent<AmmoBox>().bullet;
-        player.GetComponent<shooting>().dmg = FindObjectOfType<ResultManager>().defaultWeapon.GetComponent<AmmoBox>().dmg;
-        player.GetComponent<shooting>().reloadSpeed = FindObjectOfType<ResultManager>().defaultWeapon.GetComponent<AmmoBox>().reloadSpeed;      
-    }
+    
 
     public void BulletInstantiate(Collider obj){
         if(!loaded){
