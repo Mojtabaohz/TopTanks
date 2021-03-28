@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4084992724995809486}
   - component: {fileID: 4084992724995809491}
   - component: {fileID: 4084992724995809484}
+  - component: {fileID: 8280611531498418872}
   m_Layer: 0
   m_Name: CardBase
   m_TagString: Untagged
@@ -144,3 +145,22 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   duration: 0.5
+--- !u!114 &8280611531498418872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4084992724995809487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84977dd4fb29ed84aa8f132f97ffd634, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  card: {fileID: 0}
+  nameText: {fileID: 0}
+  descriptionText: {fileID: 0}
+  artworkImage: {fileID: 0}
+  DamageText: {fileID: 0}
+  healthText: {fileID: 0}
+  armorText: {fileID: 0}
