@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class CardDisplay : MonoBehaviour
 {
-    public TankCard card;
+    public TankInfo card;
 
     public Text nameText;
 
@@ -23,7 +23,6 @@ public class CardDisplay : MonoBehaviour
     {
         nameText.text = card.name;
         descriptionText.text = card.description;
-
         artworkImage.sprite = card.artwork;
         DamageText.text = card.damage.ToString();
         healthText.text = card.health.ToString();
