@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7a5c5c4dd306fe14e93e1b577cb2e467, type: 3}
-  m_Name: KV-2
+  m_Name: new TankCard
   m_EditorClassIdentifier: 
-  name: KV-2
-  description: Badass
-  artwork: {fileID: 21300000, guid: 282553ec37534304eb717837116bc59e, type: 3}
-  damage: 200
-  health: 1500
-  armor: 20
+  name: 
+  description: 
+  artwork: {fileID: 0}
+  damage: 0
+  health: 0
+  armor: 0
