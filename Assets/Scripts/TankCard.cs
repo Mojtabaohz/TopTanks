@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 [CreateAssetMenu(fileName = "new TankCard", menuName = "TankCard")]
-public class TankCard : ScriptableObject
+public class TankInfo : ScriptableObject
 {
     public new string name;
     public string description;
