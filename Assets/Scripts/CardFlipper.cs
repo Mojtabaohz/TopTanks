@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CardFliper : MonoBehaviour
+public class CardFlipper : MonoBehaviour
 {
     private SpriteRenderer _spriteRenderer;
-    private CardModel _model;
+    private CardDisplay _model;
 
     public AnimationCurve scaleCurve;
     public float duration = 0.5f;
@@ -14,7 +14,7 @@ public class CardFliper : MonoBehaviour
     private void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
-        _model = GetComponent<CardModel>();
+        _model = GetComponent<CardDisplay>();
     }
 
     public void FlipCard(Sprite startImage, Sprite endImage)

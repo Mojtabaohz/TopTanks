@@ -746,6 +746,96 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1460465539}
   m_CullTransparentMesh: 0
+--- !u!1001 &2669769786248138360
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1330609104186410245, guid: 3af30cf36a22e1d418d69b0be8e574ef,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3414699721241667134, guid: 3af30cf36a22e1d418d69b0be8e574ef,
+        type: 3}
+      propertyPath: m_Name
+      value: CardTest
+      objectReference: {fileID: 0}
+    - target: {fileID: 5748549311324350580, guid: 3af30cf36a22e1d418d69b0be8e574ef,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5949415230589066339, guid: 3af30cf36a22e1d418d69b0be8e574ef,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 554.694
+      objectReference: {fileID: 0}
+    - target: {fileID: 5949415230589066339, guid: 3af30cf36a22e1d418d69b0be8e574ef,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 318.73737
+      objectReference: {fileID: 0}
+    - target: {fileID: 5949415230589066339, guid: 3af30cf36a22e1d418d69b0be8e574ef,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 21.98368
+      objectReference: {fileID: 0}
+    - target: {fileID: 5949415230589066339, guid: 3af30cf36a22e1d418d69b0be8e574ef,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5949415230589066339, guid: 3af30cf36a22e1d418d69b0be8e574ef,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5949415230589066339, guid: 3af30cf36a22e1d418d69b0be8e574ef,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5949415230589066339, guid: 3af30cf36a22e1d418d69b0be8e574ef,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5949415230589066339, guid: 3af30cf36a22e1d418d69b0be8e574ef,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5949415230589066339, guid: 3af30cf36a22e1d418d69b0be8e574ef,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5949415230589066339, guid: 3af30cf36a22e1d418d69b0be8e574ef,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5949415230589066339, guid: 3af30cf36a22e1d418d69b0be8e574ef,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6799907160135518475, guid: 3af30cf36a22e1d418d69b0be8e574ef,
+        type: 3}
+      propertyPath: card
+      value: 
+      objectReference: {fileID: 11400000, guid: b397e265e82d96a4998e9f242ac13497,
+        type: 2}
+    - target: {fileID: 7224843345675680316, guid: 3af30cf36a22e1d418d69b0be8e574ef,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3af30cf36a22e1d418d69b0be8e574ef, type: 3}
 --- !u!1001 &4084992724721829667
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -812,6 +902,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CardBase
+      objectReference: {fileID: 0}
+    - target: {fileID: 4084992724995809487, guid: 6a17344a0c9f0fe49a01b1cd639dd837,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a17344a0c9f0fe49a01b1cd639dd837, type: 3}

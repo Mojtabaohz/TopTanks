@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class DebugCode : MonoBehaviour
 {
-    private CardFliper _cardFliper;
+    private CardFlipper _cardFliper;
     private CardModel _cardModel;
     private bool cardIndex = true;
     public GameObject card;
@@ -13,7 +13,7 @@ public class DebugCode : MonoBehaviour
     private void Awake()
     {
         _cardModel = card.GetComponent<CardModel>();
-        _cardFliper = card.GetComponent<CardFliper>();
+        _cardFliper = card.GetComponent<CardFlipper>();
     }
 
 

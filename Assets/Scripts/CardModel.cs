@@ -6,8 +6,8 @@ using UnityEngine;
 public class CardModel : MonoBehaviour
 {
    private SpriteRenderer _spriteRenderer;
-   //public Sprite Tank;
-   //public Sprite TankInfo;
+   public Sprite Tank;
+   public Sprite TankInfo;
    public bool cardindex = true;
 
    public void ToggleFace(bool showFace)
