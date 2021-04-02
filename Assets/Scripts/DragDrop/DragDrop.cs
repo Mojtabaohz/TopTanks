@@ -15,13 +15,10 @@ public class DragDrop : MonoBehaviour,IPointerDownHandler,IBeginDragHandler,IEnd
         canvasGroup = GetComponent<CanvasGroup>();
     }
 
-    public void OnPointerDown(PointerEventData eventData)
-    {
-        //Debug.Log("OnPointerDown");
-    }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        Debug.Log("OnBeginDrag");
         canvasGroup.alpha = 0.6f;
         canvasGroup.blocksRaycasts = false;
         canvasGroup.interactable = false;
@@ -29,6 +26,7 @@ public class DragDrop : MonoBehaviour,IPointerDownHandler,IBeginDragHandler,IEnd
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        Debug.Log("OnEndDrag");
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
         canvasGroup.interactable = true;
@@ -41,6 +39,11 @@ public class DragDrop : MonoBehaviour,IPointerDownHandler,IBeginDragHandler,IEnd
 
     public void OnDrop(PointerEventData eventData)
     {
-        
+        Debug.Log("OnDrop");
+    }
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        Debug.Log("OnPointerDown");
     }
 }

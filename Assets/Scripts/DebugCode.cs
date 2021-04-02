@@ -23,13 +23,13 @@ public class DebugCode : MonoBehaviour
         {
             if (cardIndex )
             {
-                _cardFliper.FlipCard(_cardModel.Tank,_cardModel.TankInfo);
+                //_cardFliper.FlipCard(_cardModel.Tank,_cardModel.TankInfo);
                 cardIndex = false; 
                 Debug.Log(1);
             }
             else
             {
-                _cardFliper.FlipCard(_cardModel.TankInfo,_cardModel.Tank);
+                //_cardFliper.FlipCard(_cardModel.TankInfo,_cardModel.Tank);
                 cardIndex = true;
                 Debug.Log(2);
             }

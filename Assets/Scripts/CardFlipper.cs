@@ -2,47 +2,66 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class CardFlipper : MonoBehaviour
+public class CardFlipper : MonoBehaviour,IPointerDownHandler
 {
-    private SpriteRenderer _spriteRenderer;
-    private CardDisplay _model;
+    public float x, y, z;
+    public GameObject cardBack;
+    public GameObject cardFace;
+    public bool cardBackIsActive;
+    private int timer;
 
-    public AnimationCurve scaleCurve;
-    public float duration = 0.5f;
-
-    private void Awake()
+    public void Start()
     {
-        _spriteRenderer = GetComponent<SpriteRenderer>();
-        _model = GetComponent<CardDisplay>();
+        cardFace.SetActive(true);
+        cardBack.SetActive(false);
     }
 
-    public void FlipCard(Sprite startImage, Sprite endImage)
+
+
+    public void StartFlip()
     {
-        StopCoroutine(Flip(startImage,endImage));
-        StartCoroutine(Flip(startImage, endImage));
+        StartCoroutine(Flipper());
     }
 
-    IEnumerator Flip(Sprite startImage, Sprite endImage)
+    private void Flip()
     {
-        _spriteRenderer.sprite = startImage;
-        
-        float time = 0;
-        while (time <= 1f)
+        Debug.Log("flipper card");
+        if (!cardBackIsActive)
         {
-            float scale = scaleCurve.Evaluate(time);
-            time += Time.deltaTime / duration;
-
-            Vector3 localScale = transform.localScale;
-            localScale.x = scale;
-            transform.localScale = localScale;
-
-            if (time >= 0.5f)
-            {
-                _spriteRenderer.sprite = endImage;
-            }
-
-            yield return new WaitForFixedUpdate();
+            cardBack.SetActive(true);
+            cardFace.SetActive(false);
+            cardBackIsActive = false;
         }
+        else
+        {
+            cardBack.SetActive(false);
+            cardFace.SetActive(true);
+            cardBackIsActive = true;
+        }
+    }
+
+    IEnumerator Flipper()
+    {
+        for (int i = 0; i < 180; i++)
+        {
+            yield return new WaitForSeconds(0.001f);
+            transform.Rotate(new Vector3(x,y,z));
+            timer++;
+            //Debug.Log(timer);
+            if (timer == 90 || timer == -90)
+            {
+                Flip();
+            }
+        }
+        timer = 0;
+    }
+
+    
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        Debug.Log("OnPointerDown");
+        StartCoroutine(Flipper());
     }
 }
