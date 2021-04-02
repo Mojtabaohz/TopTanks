@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5c5c4dd306fe14e93e1b577cb2e467, type: 3}
+  m_Name: CTQ-15
+  m_EditorClassIdentifier: 
+  name: CTQ-15
+  description: Light
+  artwork: {fileID: 21300000, guid: aa337512bf0a8b54388571f8fe012448, type: 3}
+  damage: 50
+  health: 1000
+  armor: 10
