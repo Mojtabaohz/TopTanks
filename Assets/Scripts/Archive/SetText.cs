@@ -24,7 +24,6 @@ public class SetText : MonoBehaviour
         if(timer > delay){            
             if(Input.anyKey){
             SceneManager.LoadScene("CardDeck");
-            
             Debug.Log("activate the text");
             }
         }
