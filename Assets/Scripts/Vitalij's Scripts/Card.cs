@@ -14,7 +14,5 @@ public class Card : ScriptableObject
    public int mobility;
    public int power;
 
-   public void Print () {
-       Debug.Log(name + ": " + rank + " The Defence is: " + defence);
-   }
+   
 }

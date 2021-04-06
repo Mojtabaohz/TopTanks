@@ -912,7 +912,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   card: {fileID: 11400000, guid: 530b5c0ba784bbc42ba338b79800dba9, type: 2}
   nameText: {fileID: 1821709652}
-  TankImage: {fileID: 1381055059}
+  artworkImage: {fileID: 1381055059}
   rankText: {fileID: 101819534}
   defenceText: {fileID: 534850193}
   powerText: {fileID: 1699704626}
@@ -967,7 +967,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
