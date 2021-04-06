@@ -109,8 +109,8 @@ NavMeshSettings:
     agentRadius: 1
     agentHeight: 2
     agentSlope: 40
-    agentClimb: 0
-    ledgeDropHeight: 2
+    agentClimb: 10
+    ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
@@ -504,7 +504,7 @@ PrefabInstance:
     - target: {fileID: 655930131168653008, guid: fc1dfc6c9644d3948b6126322a76fc08,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5515571139014567716, guid: fc1dfc6c9644d3948b6126322a76fc08,
         type: 3}
@@ -1186,7 +1186,7 @@ PrefabInstance:
     - target: {fileID: 4024086984084683101, guid: d36eb93338fbef147bbf1fbd0e3b82ac,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d36eb93338fbef147bbf1fbd0e3b82ac, type: 3}
@@ -2670,6 +2670,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 875523166388457934, guid: d905af3c6bfb2a247b30151332592489,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 2510697923112365056, guid: d905af3c6bfb2a247b30151332592489,
         type: 3}
       propertyPath: m_Name
@@ -2679,6 +2684,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2510697923112365056, guid: d905af3c6bfb2a247b30151332592489,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2998300975256319674, guid: d905af3c6bfb2a247b30151332592489,
         type: 3}
@@ -3697,7 +3707,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1610717568
 Transform:
@@ -4494,7 +4504,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &2004306637
 Transform:
