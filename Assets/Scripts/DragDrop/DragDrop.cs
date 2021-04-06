@@ -7,43 +7,49 @@ using UnityEngine.EventSystems;
 public class DragDrop : MonoBehaviour,IPointerDownHandler,IBeginDragHandler,IEndDragHandler,IDragHandler,IDropHandler
 {
     [SerializeField] private Canvas canvas;
-    private RectTransform rectTransform;
-    private CanvasGroup canvasGroup;
-    private void Awake()
-    {
-        rectTransform = GetComponent<RectTransform>();
-        canvasGroup = GetComponent<CanvasGroup>();
-    }
-
+    public static GameObject itemBeingDragged;
+    private Vector3 startPosition;
+    private Transform startParent;
+    
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        itemBeingDragged = gameObject;
+        startPosition = transform.position;
+        startParent = transform.parent;
         Debug.Log("OnBeginDrag");
-        canvasGroup.alpha = 0.6f;
-        canvasGroup.blocksRaycasts = false;
-        canvasGroup.interactable = false;
+        GetComponent<CanvasGroup>().alpha = 0.6f;
+        GetComponent<CanvasGroup>().blocksRaycasts = false;
+        GetComponent<CanvasGroup>().interactable = false;
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        itemBeingDragged = null;
+        GetComponent<CanvasGroup>().alpha = 1f;
+        GetComponent<CanvasGroup>().blocksRaycasts = true;
+        GetComponent<CanvasGroup>().interactable = true;
+        if (transform.parent == startParent)
+        {
+            transform.position = startPosition;
+        }
+        
         Debug.Log("OnEndDrag");
-        canvasGroup.alpha = 1f;
-        canvasGroup.blocksRaycasts = true;
-        canvasGroup.interactable = true;
+        
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        rectTransform.anchoredPosition += eventData.delta/canvas.scaleFactor;
+        GetComponent<RectTransform>().anchoredPosition += eventData.delta/canvas.scaleFactor;
     }
 
     public void OnDrop(PointerEventData eventData)
     {
-        Debug.Log("OnDrop");
+        //Debug.Log("OnDrop");
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        Debug.Log("OnPointerDown");
+        //Debug.Log("OnPointerDown");
     }
 }

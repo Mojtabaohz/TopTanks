@@ -5,13 +5,27 @@ using UnityEngine.EventSystems;
 
 public class CardSlot : MonoBehaviour,IDropHandler
 {
+    public GameObject item
+    {
+        get
+        {
+            if (transform.childCount>0)
+            {
+                return transform.GetChild(0).gameObject;
+            }
+
+            return null;
+        }
+    }
     public void OnDrop(PointerEventData eventData)
     {
         Debug.Log("OnDrop");
-        if (eventData.pointerDrag != null)
+        if (!item)
         {
-            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition =
-                GetComponent<RectTransform>().anchoredPosition;
+            DragDrop.itemBeingDragged.transform.SetParent(transform);
+            ExecuteEvents.ExecuteHierarchy<IHasChanged>(gameObject, null, (x, y) => x.UpdateTankList());
+            //eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition =
+            //    GetComponent<RectTransform>().anchoredPosition;
         }
         
     }

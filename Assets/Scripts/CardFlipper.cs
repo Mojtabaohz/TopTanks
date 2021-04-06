@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class CardFlipper : MonoBehaviour,IPointerDownHandler
+public class CardFlipper : MonoBehaviour,IPointerDownHandler,IPointerUpHandler
 {
     public float x, y, z;
     public GameObject cardBack;
@@ -32,13 +32,13 @@ public class CardFlipper : MonoBehaviour,IPointerDownHandler
         {
             cardBack.SetActive(true);
             cardFace.SetActive(false);
-            cardBackIsActive = false;
+            cardBackIsActive = true;
         }
         else
         {
             cardBack.SetActive(false);
             cardFace.SetActive(true);
-            cardBackIsActive = true;
+            cardBackIsActive = false;
         }
     }
 
@@ -61,7 +61,14 @@ public class CardFlipper : MonoBehaviour,IPointerDownHandler
     
     public void OnPointerDown(PointerEventData eventData)
     {
-        Debug.Log("OnPointerDown");
-        StartCoroutine(Flipper());
+        //Debug.Log("OnPointerDown");
+        
+    }
+
+    public void OnPointerUp(PointerEventData eventData)
+    {
+        Debug.Log("OnPointerUp");
+        //TODO Flip should not work during dragdrop
+        //StartCoroutine(Flipper());
     }
 }

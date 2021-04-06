@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7a5c5c4dd306fe14e93e1b577cb2e467, type: 3}
-  m_Name: KV-2
+  m_Name: KV-3
   m_EditorClassIdentifier: 
-  name: KV-2
-  description: Badass
-  artwork: {fileID: 21300000, guid: 282553ec37534304eb717837116bc59e, type: 3}
-  damage: 50
+  name: KV-3
+  description: Heavy Armored
+  artwork: {fileID: 21300000, guid: 93697694877007a40b8941b26011d08b, type: 3}
+  damage: 100
   health: 1500
-  armor: 20
+  armor: 60

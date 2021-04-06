@@ -21,7 +21,8 @@ public class Manager :MonoBehaviour{
       return instance;
     }
     }
-  public Text result;
+  //public Text result;
+  [SerializeField] public List<Card> battleTanks = new List<Card>(); 
   
   void Awake(){
     if(instance == null){
