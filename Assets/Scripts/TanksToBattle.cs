@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class TanksToBattle : MonoBehaviour,IHasChanged
 {
     [SerializeField] private Transform slots;
-    [SerializeField] private Card tankInSlot;
+    //[SerializeField] private Card tankInSlot;
     [SerializeField] private Text cardText;
     public void Start()
     {
@@ -26,7 +26,7 @@ public class TanksToBattle : MonoBehaviour,IHasChanged
             GameObject item = slotTransform.GetComponent<CardSlot>().item;
             if (item)
             {
-                builder.Append(item.GetComponent<Card>().name);
+                builder.Append(item.GetComponent<CardDisplay>().card.name);
                 builder.Append(" - ");
                 //FindObjectOfType<Manager>().battleTanks.Add(item.GetComponent<Card>());
             }
