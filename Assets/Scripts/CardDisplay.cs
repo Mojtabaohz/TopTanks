@@ -15,11 +15,13 @@ public class CardDisplay : MonoBehaviour
 
     public Image artworkImage;
 
-    public Text damageText;
+    public Text powerText;
 
-    //public Text healthText;
+    public Text healthText;
 
-    //public Text armorText;
+    public Text mobilityText;
+
+    public Text defenceText;
     
     // Start is called before the first frame update
     void Start()
@@ -27,9 +29,10 @@ public class CardDisplay : MonoBehaviour
         nameText.text = card.name;
         descriptionText.text = card.description;
         artworkImage.sprite = card.artwork;
-        damageText.text = card.damage.ToString();
-        //healthText.text = card.health.ToString();
-        //armorText.text = card.armor.ToString();
+        powerText.text = card.power.ToString();
+        mobilityText.text = card.mobility.ToString();
+        healthText.text = card.health.ToString();
+        defenceText.text = card.defence.ToString();
         
     }
 
