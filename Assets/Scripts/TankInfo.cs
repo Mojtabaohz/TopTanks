@@ -8,9 +8,10 @@ public class TankInfo : ScriptableObject
     public string description;
     public Sprite artwork;
 
-    public int damage;
+    public int power;
     public int health;
-    public int armor;
+    public int defence;
+    public int mobility;
     
     
 }

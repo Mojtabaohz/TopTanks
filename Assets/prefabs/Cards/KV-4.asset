@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7a5c5c4dd306fe14e93e1b577cb2e467, type: 3}
-  m_Name: KV-2
+  m_Name: KV-4
   m_EditorClassIdentifier: 
-  name: KV-2
-  description: Badass
+  name: KV-4
+  description: Speedy bastard
   artwork: {fileID: 21300000, guid: 93697694877007a40b8941b26011d08b, type: 3}
-  power: 60
-  health: 1500
-  defence: 70
-  mobility: 15
+  power: 50
+  health: 1300
+  defence: 60
+  mobility: 30
