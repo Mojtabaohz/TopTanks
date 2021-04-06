@@ -31,9 +31,7 @@ public class TanksToBattle : MonoBehaviour,IHasChanged
                 FindObjectOfType<Manager>().battleTanks.Add(item.GetComponent<CardDisplay>().card);
             }
         }
-
-        cardText.text = builder.ToString(); 
-
+        cardText.text = builder.ToString();
     }
 }
 
