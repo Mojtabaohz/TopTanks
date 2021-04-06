@@ -22,7 +22,7 @@ public class Manager :MonoBehaviour{
     }
     }
   //public Text result;
-  [SerializeField] public List<Card> battleTanks = new List<Card>(); 
+  [SerializeField] public List<TankInfo> battleTanks = new List<TankInfo>(); 
   
   void Awake(){
     if(instance == null){

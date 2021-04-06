@@ -28,7 +28,7 @@ public class TanksToBattle : MonoBehaviour,IHasChanged
             {
                 builder.Append(item.GetComponent<CardDisplay>().card.name);
                 builder.Append(" - ");
-                //FindObjectOfType<Manager>().battleTanks.Add(item.GetComponent<Card>());
+                FindObjectOfType<Manager>().battleTanks.Add(item.GetComponent<CardDisplay>().card);
             }
         }
 
