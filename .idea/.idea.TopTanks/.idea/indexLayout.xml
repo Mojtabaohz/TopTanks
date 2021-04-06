@@ -28,7 +28,6 @@
       <Path>Logs</Path>
       <Path>Mayhem Island_Data</Path>
       <Path>MonoBleedingEdge</Path>
-      <Path>Temp</Path>
       <Path>Unity Builds</Path>
       <Path>obj</Path>
     </explicitExcludes>
