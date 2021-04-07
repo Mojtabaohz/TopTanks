@@ -1612,7 +1612,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1189579166}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.9999999
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2135,6 +2135,7 @@ GameObject:
   - component: {fileID: 689411875}
   - component: {fileID: 689411874}
   - component: {fileID: 689411877}
+  - component: {fileID: 689411878}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -2234,6 +2235,20 @@ MonoBehaviour:
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!114 &689411878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 689411872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aed9a25d958c9294e8eb82ce7c3fe997, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectToFind: {fileID: 689411872}
+  Button: {fileID: 793094729}
 --- !u!1 &700194068
 GameObject:
   m_ObjectHideFlags: 0
@@ -2467,7 +2482,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -0.000015258789}
   m_SizeDelta: {x: 1083.8823, y: 130.45062}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &740440324
@@ -2530,8 +2545,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 155, y: -237}
-  m_SizeDelta: {x: 360, y: 90}
+  m_AnchoredPosition: {x: 131.3, y: -205.48}
+  m_SizeDelta: {x: 360, y: 38.99205}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &793094731
 MonoBehaviour:
@@ -3004,8 +3019,9 @@ GameObject:
   - component: {fileID: 985155643}
   - component: {fileID: 985155642}
   - component: {fileID: 985155645}
+  - component: {fileID: 985155646}
   m_Layer: 5
-  m_Name: Panel (2)
+  m_Name: Panel2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3103,6 +3119,20 @@ MonoBehaviour:
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!114 &985155646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 985155640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aed9a25d958c9294e8eb82ce7c3fe997, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectToFind: {fileID: 985155640}
+  Button: {fileID: 793094729}
 --- !u!1 &1008840054
 GameObject:
   m_ObjectHideFlags: 0
@@ -4107,8 +4137,9 @@ GameObject:
   - component: {fileID: 1196661273}
   - component: {fileID: 1196661272}
   - component: {fileID: 1196661275}
+  - component: {fileID: 1196661276}
   m_Layer: 5
-  m_Name: Panel (1)
+  m_Name: Panel1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4206,6 +4237,20 @@ MonoBehaviour:
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!114 &1196661276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1196661270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aed9a25d958c9294e8eb82ce7c3fe997, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectToFind: {fileID: 1196661270}
+  Button: {fileID: 793094729}
 --- !u!1 &1212089274
 GameObject:
   m_ObjectHideFlags: 0

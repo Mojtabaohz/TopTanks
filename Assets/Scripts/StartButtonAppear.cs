@@ -9,7 +9,7 @@ public class StartButtonAppear : MonoBehaviour
 
     public void OpenButton()
     {
-        if(Button != null )
+        if(transform.childCount > 0 )
         {
             Button.SetActive(true);
         }
