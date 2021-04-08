@@ -2135,7 +2135,6 @@ GameObject:
   - component: {fileID: 689411875}
   - component: {fileID: 689411874}
   - component: {fileID: 689411877}
-  - component: {fileID: 689411878}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -2235,20 +2234,6 @@ MonoBehaviour:
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
---- !u!114 &689411878
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 689411872}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aed9a25d958c9294e8eb82ce7c3fe997, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObjectToFind: {fileID: 689411872}
-  Button: {fileID: 793094729}
 --- !u!1 &700194068
 GameObject:
   m_ObjectHideFlags: 0
@@ -2845,7 +2830,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1562923421}
   m_Direction: 0
   m_Value: 0
-  m_Size: 0.41941583
+  m_Size: 0.4194158
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3019,7 +3004,6 @@ GameObject:
   - component: {fileID: 985155643}
   - component: {fileID: 985155642}
   - component: {fileID: 985155645}
-  - component: {fileID: 985155646}
   m_Layer: 5
   m_Name: Panel2
   m_TagString: Untagged
@@ -3119,20 +3103,6 @@ MonoBehaviour:
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
---- !u!114 &985155646
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 985155640}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aed9a25d958c9294e8eb82ce7c3fe997, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObjectToFind: {fileID: 985155640}
-  Button: {fileID: 793094729}
 --- !u!1 &1008840054
 GameObject:
   m_ObjectHideFlags: 0
@@ -4137,7 +4107,6 @@ GameObject:
   - component: {fileID: 1196661273}
   - component: {fileID: 1196661272}
   - component: {fileID: 1196661275}
-  - component: {fileID: 1196661276}
   m_Layer: 5
   m_Name: Panel1
   m_TagString: Untagged
@@ -4237,20 +4206,6 @@ MonoBehaviour:
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
---- !u!114 &1196661276
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1196661270}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aed9a25d958c9294e8eb82ce7c3fe997, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObjectToFind: {fileID: 1196661270}
-  Button: {fileID: 793094729}
 --- !u!1 &1212089274
 GameObject:
   m_ObjectHideFlags: 0
@@ -6133,6 +6088,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1645635582}
   - component: {fileID: 1645635583}
+  - component: {fileID: 1645635584}
   m_Layer: 5
   m_Name: PlacingTanksPanel
   m_TagString: Untagged
@@ -6170,6 +6126,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1645635581}
   m_CullTransparentMesh: 0
+--- !u!114 &1645635584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1645635581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aed9a25d958c9294e8eb82ce7c3fe997, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectsToFind:
+  - {fileID: 689411872}
+  - {fileID: 1196661270}
+  - {fileID: 985155640}
+  button: {fileID: 793094729}
+  filledSlot: 0
 --- !u!1 &1657976179
 GameObject:
   m_ObjectHideFlags: 0

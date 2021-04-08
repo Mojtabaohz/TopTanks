@@ -28,7 +28,7 @@ public class HealthBar : MonoBehaviour
             currentHealth = 0;
             alive = false;
             FindObjectOfType<ResultManager>().score++;
-            Debug.Log(FindObjectOfType<ResultManager>().score);
+            //Debug.Log(FindObjectOfType<ResultManager>().score);
             
             gameObject.SetActive(false);
             
