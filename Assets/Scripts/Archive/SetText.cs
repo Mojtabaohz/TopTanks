@@ -23,7 +23,7 @@ public class SetText : MonoBehaviour
         timer += Time.deltaTime;
         if(timer > delay){            
             if(Input.anyKey){
-            SceneManager.LoadScene("CardDeck");
+            SceneManager.LoadScene("MainScene");
             Debug.Log("activate the text");
             }
         }

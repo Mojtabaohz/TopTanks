@@ -7,7 +7,6 @@ public class FindReference : MonoBehaviour
 {
 
     public GameObject[] objectsToFind;
-    //private int[] filledStatus;
     public GameObject button;
     public int filledSlot;
 

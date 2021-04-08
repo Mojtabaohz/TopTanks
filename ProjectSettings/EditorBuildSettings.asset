@@ -5,22 +5,19 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TitleScene.unity
     guid: 037aa81005e833648a35c91b1fcc91c7
-  - enabled: 1
-    path: Assets/Scenes/CardDeck.unity
-    guid: aff3dd48a2afd28459e3f2cb9f138411
-  - enabled: 1
-    path: Assets/Scenes/ResultScene.unity
-    guid: db90fd380e3c14249bc0e0f43411b0e2
-  - enabled: 1
-    path: Assets/Scenes/PlayScene.unity
-    guid: 152ee29735222124f8214ccbd14ad44b
   - enabled: 1
     path: Assets/Scenes/MainScene.unity
     guid: fb647f8dd8c02ed43a4f4b5ee505d49d
   - enabled: 1
     path: Assets/Scenes/ChoiceScene.unity
     guid: a1653d2ced3f5c248a3df632e6018a46
+  - enabled: 1
+    path: Assets/Scenes/PlayScene.unity
+    guid: 152ee29735222124f8214ccbd14ad44b
+  - enabled: 1
+    path: Assets/Scenes/ResultScene.unity
+    guid: db90fd380e3c14249bc0e0f43411b0e2
   m_configObjects: {}
