@@ -17,7 +17,7 @@ public class DragDrop : MonoBehaviour,IPointerDownHandler,IBeginDragHandler,IEnd
         itemBeingDragged = gameObject;
         startPosition = transform.position;
         startParent = transform.parent;
-        Debug.Log("OnBeginDrag");
+        //Debug.Log("OnBeginDrag");
         GetComponent<CanvasGroup>().alpha = 0.6f;
         GetComponent<CanvasGroup>().blocksRaycasts = false;
         GetComponent<CanvasGroup>().interactable = false;
@@ -34,7 +34,7 @@ public class DragDrop : MonoBehaviour,IPointerDownHandler,IBeginDragHandler,IEnd
             transform.position = startPosition;
         }
         
-        Debug.Log("OnEndDrag");
+        //Debug.Log("OnEndDrag");
         
     }
 

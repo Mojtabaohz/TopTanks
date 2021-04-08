@@ -67,7 +67,7 @@ public class CardFlipper : MonoBehaviour,IPointerDownHandler,IPointerUpHandler
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        Debug.Log("OnPointerUp");
+        //Debug.Log("OnPointerUp");
         //TODO Flip should not work during dragdrop
         //StartCoroutine(Flipper());
     }

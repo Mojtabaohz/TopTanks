@@ -1,31 +1,41 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class FindReference : MonoBehaviour
 {
 
-    public GameObject ObjectToFind;
-    public GameObject Button;
-    
-    bool isDone = false;
+    public GameObject[] objectsToFind;
+    //private int[] filledStatus;
+    public GameObject button;
+    public int filledSlot;
+
+
     
 
-    // Update is called once per frame
-    void Update()
+
+    public void CheckSlot()
     {
-        if (!isDone) {
-        ObjectToFind = transform.GetChild(0).gameObject;
-        
-        Debug.Log(ObjectToFind.name);
+        filledSlot = 0;
+        foreach (var slot in objectsToFind)
+        {
+            filledSlot += slot.transform.childCount;
+        }
+        CheckStartButton();
 
-        isDone = true;
-        if (transform.childCount > 0) {
-            Button.SetActive(true);
+    }
+
+    private void CheckStartButton()
+    {
+        if (filledSlot >= 3)
+        {
+            button.SetActive(true);
         }
+        else
+        {
+            button.SetActive(false);
         }
-        
-        
     }
     // public void OpenButton()
     // {
