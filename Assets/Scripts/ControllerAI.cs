@@ -107,7 +107,6 @@ public class ControllerAI : MonoBehaviour
             {
                 currentTarget = enemiesList[0];
             }
-            
             navAgent.SetDestination(currentTarget.transform.position);
         }
         
@@ -141,12 +140,12 @@ public class ControllerAI : MonoBehaviour
             return DistanceCalculator(a).CompareTo(DistanceCalculator(b)) ;
         });
         
-        
     }
 
     public void TurretRotation(GameObject target)
     {
         Turret.transform.LookAt(target.transform);
+        
     }
 
     

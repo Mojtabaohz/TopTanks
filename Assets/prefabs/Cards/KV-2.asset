@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a5c5c4dd306fe14e93e1b577cb2e467, type: 3}
   m_Name: KV-2
   m_EditorClassIdentifier: 
+  tankClass: 0
   name: KV-2
   description: Badass
   artwork: {fileID: 21300000, guid: 93697694877007a40b8941b26011d08b, type: 3}
@@ -19,3 +20,5 @@ MonoBehaviour:
   health: 1500
   defence: 70
   mobility: 15
+  initialPrefab: {fileID: 8991889886371931548, guid: f8706da70c6293a4c91b6fc910a83883,
+    type: 3}

@@ -250,10 +250,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39512d4b7fcf2ff479189e07fe73bcae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BunkerRed: {fileID: 908285234350454512, guid: d9012dec9127a134286f9c6dfdba4ef6,
-    type: 3}
-  BunkerBlue: {fileID: 908285234350454512, guid: d9012dec9127a134286f9c6dfdba4ef6,
-    type: 3}
   maxHealth: 500
   currentHealth: 0
   alive: 1

@@ -5,8 +5,9 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    [SerializeField] public GameObject BunkerRed;
-    public GameObject BunkerBlue;
+    [SerializeField] 
+    //public GameObject BunkerRed;
+    //public GameObject BunkerBlue;
     public int maxHealth;
     public int currentHealth;
     public bool alive = true;
@@ -68,10 +69,5 @@ public class HealthBar : MonoBehaviour
         
         
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }

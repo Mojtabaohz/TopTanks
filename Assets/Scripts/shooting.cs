@@ -62,7 +62,7 @@ public class shooting : MonoBehaviour
                 TempRigidbody.AddForce(transform.up *  (250));
             }
             
-            TemporaryBullethandler.GetComponent<Bullet>().collisionEnable = true;
+            
             Destroy(TemporaryBullethandler, 6.0f);
                 if (bulletSpeed<=1500){
                     //ShootSound.Play(); 
@@ -164,7 +164,6 @@ public class shooting : MonoBehaviour
             if(gameObject.transform.childCount < 4){
                 GameObject TemporaryBullet;
                 TemporaryBullet = Instantiate(bullet, obj.GetComponent<shooting>().bulletEmitter.transform.position, obj.GetComponent<shooting>().bulletEmitter.transform.rotation) as GameObject;
-                TemporaryBullet.GetComponent<Bullet>().collisionEnable = false;
                 TemporaryBullet.transform.Rotate(Vector3.left * 90);
                 TemporaryBullet.transform.parent = obj.GetComponent<shooting>().transform;
                 TemporaryBullet.GetComponent<Rigidbody>().useGravity = false;

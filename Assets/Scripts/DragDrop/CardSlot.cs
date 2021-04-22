@@ -25,7 +25,7 @@ public class CardSlot : MonoBehaviour,IDropHandler
             
             DragDrop.itemBeingDragged.transform.SetParent(transform);
             ExecuteEvents.ExecuteHierarchy<IHasChanged>(gameObject, null, (x, y) => x.UpdateTankList());
-            FindObjectOfType<FindReference>().CheckSlot();
+            FindObjectOfType<BattleButton>().CheckSlot();
             //eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition =
             //    GetComponent<RectTransform>().anchoredPosition;
         }
