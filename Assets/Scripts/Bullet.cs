@@ -20,7 +20,7 @@ public class Bullet : MonoBehaviour
 
     
     void OnTriggerEnter(Collider other){
-        if (other.tag.Equals("Enemy"))
+        if (other.gameObject.tag.Equals("Enemy"))
         {
             DoDamage(dmg,other);
             Debug.Log("Damage Done");
