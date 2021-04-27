@@ -23,7 +23,7 @@ public class AiScout : BaseAI
                 //Debug.Log(Tank.GetComponent<HealthBar>().currentHealth);
                 yield return MoveToTarget(Tank.target);
                 //Debug.Log("move to target", Tank.target);
-                yield return TurretLookAt(Tank.target);
+                //yield return TurretLookAt(Tank.target);
                 yield return Fire();
 
             }
@@ -41,12 +41,13 @@ public class AiScout : BaseAI
     /// </summary>
     public override void OnScannedRobot(ScannedRobotEvent e)
     {
+        Debug.Log("Tank detected: " + e.Name + " at distance: " + e.Distance + " target " + e.Transform);
         if (!targetName.Contains(e.Name))
         {
             targetName.Add(e.Name);
             targetDistance.Add(e.Distance);
             targetTransform.Add(e.Transform);
-            //Debug.Log("Tank detected: " + e.Name + " at distance: " + e.Distance + " target " + e.Transform);
+            Debug.Log("Tank detected: " + e.Name + " at distance: " + e.Distance + " target " + e.Transform);
             Tank.target = e.Transform;
         }
     }

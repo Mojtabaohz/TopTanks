@@ -122,8 +122,8 @@ public class TankController : MonoBehaviour
     /// 
     /// </summary>
     /// <param name="other"></param>
-    void OnTriggerStay(Collider other) {
-        if (other.tag == "tank")
+    void OnTriggerEnter(Collider other) {
+        if (other.CompareTag("Player") || other.CompareTag("Enemy"))
         {
             ScannedRobotEvent scannedRobotEvent = new ScannedRobotEvent();
             scannedRobotEvent.Distance = Vector3.Distance(transform.position, other.transform.position);
