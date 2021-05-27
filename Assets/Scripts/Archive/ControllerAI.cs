@@ -18,6 +18,7 @@ public class ControllerAI : MonoBehaviour
     [SerializeField]
     private float m_DistanceToTarget; //I am using this variable to see in realtime what the distance is between the characters when the scene is played. This is so that I can tweak my stopping distance and weapon throw distance in the future functions
 
+    private shooting shootingComponent;
     [SerializeField] private GameObject Turret;
     /*
     [Space(10)]
@@ -49,6 +50,7 @@ public class ControllerAI : MonoBehaviour
         fireRange = gameObject.GetComponent<TanksAttr>().fireRange;
         viewRange = gameObject.GetComponent<TanksAttr>().viewRange;
         navAgent = GetComponent<NavMeshAgent>();
+        shootingComponent = gameObject.GetComponent<shooting>();
     }
 
     // Update is called once per frame
@@ -90,7 +92,7 @@ public class ControllerAI : MonoBehaviour
                 //Debug.Log("stop and shoot");
                 //gameObject.GetComponent<shooting>().Shoot();
                 //gameObject.GetComponent<shooting>().Fire();
-                gameObject.GetComponent<shooting>().Shooting2();
+                shootingComponent.Shooting2();
             }
         }
         else

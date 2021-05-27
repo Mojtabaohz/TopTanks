@@ -88,8 +88,8 @@ public class BaseAI : MonoBehaviour
     /// </summary>
     /// <param name="power">???</param>
     /// <returns></returns>
-    public IEnumerator Fire() {
-        yield return Tank.__Fire();
+    public void Fire() {
+        Tank.__Fire();
     }
 
     /// <summary>

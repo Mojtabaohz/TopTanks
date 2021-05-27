@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
+using UnityEngine.Serialization;
 
-    public class TurretAim : MonoBehaviour
+public class TurretAim : MonoBehaviour
     {
         [Header("Rotations")]
 
@@ -30,14 +31,16 @@
         [Range(0, 179)] public float LeftLimit = 120f;
         [Range(0, 179)] public float RightLimit = 120f;
 
+        [FormerlySerializedAs("IsIdle")]
         [Header("Behavior")]
 
         [Tooltip("When idle, the turret does not aim at anything and simply points forwards.")]
-        public bool IsIdle = false;
+        public bool isIdle = false;
 
+        [FormerlySerializedAs("AimPosition")]
         [Tooltip("Position the turret will aim at when not idle. Set this to whatever you want" +
-            "the turret to actively aim at.")]
-        public Vector3 AimPosition = Vector3.zero;
+                 "the turret to actively aim at.")]
+        public Vector3 aimPosition = Vector3.zero;
 
         [Tooltip("When the turret is within this many degrees of the target, it is considered aimed.")]
         [SerializeField] private float aimedThreshold = 5f;
@@ -67,16 +70,16 @@
         public bool IsTurretAtRest { get { return isBarrelAtRest && isBaseAtRest; } }
 
         /// <summary>
-        /// True when the turret is aimed at the given <see cref="AimPosition"/>. When the turret
+        /// True when the turret is aimed at the given <see cref="aimPosition"/>. When the turret
         /// is idle, this is never true.
         /// </summary>
         public bool IsAimed { get { return isAimed; } }
 
         /// <summary>
-        /// Angle in degress to the given <see cref="AimPosition"/>. When the turret is idle,
+        /// Angle in degress to the given <see cref="aimPosition"/>. When the turret is idle,
         /// the angle reports 999.
         /// </summary>
-        public float AngleToTarget { get { return IsIdle ? 999f : angleToTarget; } }
+        public float AngleToTarget { get { return isIdle ? 999f : angleToTarget; } }
 
         private void Awake()
         {
@@ -87,7 +90,7 @@
 
         private void Update()
         {
-            if (IsIdle)
+            if (isIdle)
             {
                 if (!IsTurretAtRest)
                     RotateTurretToIdle();
@@ -95,13 +98,13 @@
             }
             else
             {
-                RotateBaseToFaceTarget(AimPosition);
+                RotateBaseToFaceTarget(aimPosition);
 
                 if (hasBarrels)
-                    RotateBarrelsToFaceTarget(AimPosition);
+                    RotateBarrelsToFaceTarget(aimPosition);
 
                 // Turret is considered "aimed" when it's pointed at the target.
-                angleToTarget = GetTurretAngleToTarget(AimPosition);
+                angleToTarget = GetTurretAngleToTarget(aimPosition);
 
                 // Turret is considered "aimed" when it's pointed at the target.
                 isAimed = angleToTarget < aimedThreshold;

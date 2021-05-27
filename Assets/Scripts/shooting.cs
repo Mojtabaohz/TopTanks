@@ -40,7 +40,7 @@ public class shooting : MonoBehaviour
     public void Shoot(){
         
         Shooting();
-        //Debug.Log("shoot called");
+        Debug.Log("shoot called");
     }
 
     void Shooting(){
@@ -54,7 +54,6 @@ public class shooting : MonoBehaviour
             //Instantiate(bullet,bulletEmitter.transform.position, bulletEmitter.transform.rotation) as GameObject;
 
             TemporaryBullethandler.transform.Rotate(Vector3.left * 90);
-
             Rigidbody TempRigidbody;
             TempRigidbody = TemporaryBullethandler.GetComponent<Rigidbody>();
             TempRigidbody.AddForce(transform.forward * (bulletSpeed + moveSpeed));

@@ -24,7 +24,8 @@ public class AiScout : BaseAI
                 yield return MoveToTarget(Tank.target);
                 //Debug.Log("move to target", Tank.target);
                 //yield return TurretLookAt(Tank.target);
-                yield return Fire();
+                Fire();
+                
 
             }
             else

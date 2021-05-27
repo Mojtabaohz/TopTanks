@@ -7,7 +7,7 @@
 
         public Transform TargetPoint = null;
 
-        private bool isIdle = false;
+        //private bool isIdle = false;
 
         private void Awake()
         {
@@ -21,12 +21,9 @@
                 return;
 
             if (TargetPoint == null)
-                TurretAim.IsIdle = TargetPoint == null;
+                TurretAim.isIdle = TargetPoint == null;
             else
-                TurretAim.AimPosition = TargetPoint.position;
-
-            if (Input.GetMouseButtonDown(0))
-                TurretAim.IsIdle = !TurretAim.IsIdle;
+                TurretAim.aimPosition = TargetPoint.position;
         }
     }
 

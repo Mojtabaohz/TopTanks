@@ -15,6 +15,14 @@ public class TankController : MonoBehaviour
     public int fireRange = 100;
     private bool loaded = false;
     //public bool active = false;
+    
+    /*
+     * TurretAim variables
+     */
+    private TurretAim turretAim = null;
+    private bool isIdle = false;
+    
+    
     private const float reloadTime = 2;
     //public Transform spawnPoint;
     //TODO: Get position from the menu spot and assign it here before spawn, need to code, Spawn() function
@@ -26,11 +34,11 @@ public class TankController : MonoBehaviour
     protected float Timer;
     // the bullets and the locations on the prefab where they spawn from
     public GameObject BulletPrefab = null;
-    public Transform Emmitter = null;
+    public Transform emitter = null;
     //public Transform CannonLeftSpawnPoint = null;
     //public Transform CannonRightSpawnPoint = null;
 
-    // the 'scanner' that allows the ship to 'see' its surroundings
+    // the 'scanner' that allows the tank to 'see' its surroundings
     public GameObject Turret = null;
 
     // states can be used to indicate the state of the ship (attacking, fleeing, searching etc.)
@@ -52,7 +60,10 @@ public class TankController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SetAI(gameObject.AddComponent<AiScout>());
+        turretAim = gameObject.GetComponent<TurretAim>();
+        ai = gameObject.AddComponent<AiScout>();
+        SetAI(ai);
+ 
         //active = true;
         navAgent.speed = TankSpeed;
         navAgent.angularSpeed = RotationSpeed;
@@ -66,8 +77,14 @@ public class TankController : MonoBehaviour
     {
         ReloadBullet();
         
+        if (target == null)
+            turretAim.isIdle = target == null;
+        else
+            turretAim.aimPosition = target.position;
+        
     }
 
+    
     /// <summary>
     /// Assigns the AI that steers this instance
     /// </summary>
@@ -118,7 +135,7 @@ public class TankController : MonoBehaviour
     }
 
     /// <summary>
-    /// If a ship is inside the 'scanner', its information (distance and name) will be sent to the AI
+    /// If a tank is inside the 'scanner', its information (distance and name) will be sent to the AI
     /// 
     /// </summary>
     /// <param name="other"></param>
@@ -225,23 +242,20 @@ public class TankController : MonoBehaviour
     /// </summary>
     /// <param name="power">???</param>
     /// <returns></returns>
-    public IEnumerator __Fire() {
+    public void __Fire() {
         if (loaded)
         {
-            //Debug.Log("fire");
-            //GameObject newInstance = Instantiate(BulletPrefab, Emmitter.position, Emmitter.rotation);
+            Debug.Log("fire");
             GameObject projectile = Instantiate(BulletPrefab);
-            //Physics.IgnoreCollision(projectile.GetComponent<Collider>(), emitter.parent.parent.GetComponent<Collider>());
-            projectile.transform.position = Emmitter.position;
+            Physics.IgnoreCollision(projectile.GetComponent<Collider>(), emitter.parent.parent.GetComponent<Collider>());
+            projectile.transform.position = emitter.position;
             Vector3 rotation = projectile.transform.rotation.eulerAngles;
             projectile.transform.rotation = Quaternion.Euler(rotation.x, transform.eulerAngles.y, rotation.z);
-            projectile.GetComponent<Rigidbody>().AddForce(Emmitter.forward * projectile.GetComponent<Bullet>().bulletSpeed, ForceMode.Impulse);
-            this.loaded = false;
+            projectile.GetComponent<Rigidbody>().AddForce(emitter.forward * 50, ForceMode.Impulse);
             Destroy(projectile, 2.0f);
             
         }
-       
-        yield return new WaitForFixedUpdate();
+        
     }
 
     
