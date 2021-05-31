@@ -246,6 +246,7 @@ public class TankController : MonoBehaviour
         if (loaded)
         {
             Debug.Log("fire");
+            loaded = false;
             GameObject projectile = Instantiate(BulletPrefab);
             Physics.IgnoreCollision(projectile.GetComponent<Collider>(), emitter.parent.parent.GetComponent<Collider>());
             projectile.transform.position = emitter.position;

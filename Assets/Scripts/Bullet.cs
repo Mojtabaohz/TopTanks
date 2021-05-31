@@ -25,9 +25,9 @@ public class Bullet : MonoBehaviour
             DoDamage(dmg,other);
             Debug.Log("Damage Done");
             gameObject.SetActive(false);
-            DoDamage(dmg,other);
+            //DoDamage(dmg,other);
         }
-        Destroy(gameObject);
+        //Destroy(gameObject);
         
     }
 

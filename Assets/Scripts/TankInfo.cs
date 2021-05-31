@@ -19,11 +19,21 @@ public class TankInfo : ScriptableObject
     public new string name;
     public string description;
     public Sprite artwork;
+    [Header("Power")]
+    public int attackDamage;
 
-    public int power;
-    public int health;
-    public int defence;
-    public int mobility;
+    public int reloadTime;
+    public int peneteration;
+    [Header("Defense")]
+    public int baseHealth;
+
+    public int armor;
+    [Header("Mobility")] 
+    public int turretRotationSpeed;
+
+    public int tankRotationSpeed;
+    public int movementSpeed;
+    
     public GameObject initialPrefab;
     
 }
