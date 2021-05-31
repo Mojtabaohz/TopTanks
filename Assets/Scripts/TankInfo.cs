@@ -9,7 +9,7 @@ using UnityEngine.UI;
 [CreateAssetMenu(fileName = "new TankCard", menuName = "TankCard")]
 public class TankInfo : ScriptableObject
 {
-    [Header("General Info")]
+    
     public enum TankClass
     {
         LT,MT, HT, TD, SPG
