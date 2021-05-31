@@ -9,7 +9,7 @@ using UnityEngine.UI;
 [CreateAssetMenu(fileName = "new TankCard", menuName = "TankCard")]
 public class TankInfo : ScriptableObject
 {
-    
+    [Header("General Info")]
     public enum TankClass
     {
         LT,MT, HT, TD, SPG
@@ -19,6 +19,7 @@ public class TankInfo : ScriptableObject
     public new string name;
     public string description;
     public Sprite artwork;
+    public GameObject initialPrefab;
     [Header("Power")]
     public int attackDamage;
 
@@ -34,7 +35,7 @@ public class TankInfo : ScriptableObject
     public int tankRotationSpeed;
     public int movementSpeed;
     
-    public GameObject initialPrefab;
+    
     
 }
 
