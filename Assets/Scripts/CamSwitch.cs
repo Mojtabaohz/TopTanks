@@ -12,15 +12,13 @@ public class CamSwitch : MonoBehaviour
     {
         if (Input.GetButtonDown("Switch1"))
         {
-            cam1.setActive(true);
-        
-            // cam1.getComponent<CameraTarget>
-            // cam2.setActive(false);
+            cam1.SetActive(true);
+            cam2.SetActive(false);
         }
         if (Input.GetButtonDown("Switch2"))
         {
-            // cam1.setActive(false);
-            // cam2.setActive(true);
+            cam1.SetActive(false);
+            cam2.SetActive(true);
         }
     }
 }
