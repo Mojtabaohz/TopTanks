@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1790893441111209646}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 2.9, z: 50.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 976169950147824756}
@@ -5172,16 +5172,14 @@ GameObject:
   m_Component:
   - component: {fileID: 6286866002144738312}
   - component: {fileID: -3264997388760910379}
-  - component: {fileID: 7937054066000180223}
   - component: {fileID: 733003780830869451}
   - component: {fileID: 5902289389427816625}
   - component: {fileID: 7190398865782222750}
-  - component: {fileID: 3189776214266085836}
   - component: {fileID: 7054500731997716115}
   - component: {fileID: 4703594231726676161}
   m_Layer: 0
   m_Name: 3D_ZTQ_15_Tank
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5227,25 +5225,11 @@ MonoBehaviour:
   hasLimitedTraverse: 0
   LeftLimit: 120
   RightLimit: 120
-  IsIdle: 0
-  AimPosition: {x: 0, y: 0, z: 0}
+  isIdle: 0
+  aimPosition: {x: 0, y: 0, z: 0}
   aimedThreshold: 5
   DrawDebugRay: 1
-  DrawDebugArcs: 0
---- !u!114 &7937054066000180223
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3582226334812038042}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b5f4be510b5e6043bec0b798f4ea016, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TurretAim: {fileID: -3264997388760910379}
-  TargetPoint: {fileID: 0}
+  DrawDebugArcs: 1
 --- !u!195 &733003780830869451
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -5297,31 +5281,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &3189776214266085836
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3582226334812038042}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ce1118372c0c5c438ceb54db70cd488, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletEmitter: {fileID: 1790893441111209646}
-  emitter: {fileID: 5316909391930759975}
-  bulletLifeTime: 2
-  bullet: {fileID: 5969628609626260578, guid: 358cb4aac593f564cabdfaa2af538e11, type: 3}
-  playerBase: {fileID: 0}
-  dmg: 20
-  bulletSpeed: 100
-  loaded: 1
-  reloadSpeed: 4
-  Buff: 0
-  buffDuration: 0
-  moveSpeed: 0
-  MS: 4
 --- !u!114 &7054500731997716115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5368,7 +5327,8 @@ MonoBehaviour:
     m_NumColorKeys: 3
     m_NumAlphaKeys: 2
   fill: {fileID: 5574344623276538672}
-  DestroySound: {fileID: 0}
+  DestroySound: {fileID: 3583197420817106200, guid: fc1dfc6c9644d3948b6126322a76fc08,
+    type: 3}
 --- !u!114 &4703594231726676161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5381,10 +5341,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9b1062d445722e41ae4e0b7066c7aca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRange: 100
+  fireRange: 20
   BulletPrefab: {fileID: 5969628609626260578, guid: 358cb4aac593f564cabdfaa2af538e11,
     type: 3}
-  Emmitter: {fileID: 5316909391930759975}
+  emitter: {fileID: 5316909391930759975}
   Turret: {fileID: 4738102560787533309}
   states: []
   navAgent: {fileID: 733003780830869451}

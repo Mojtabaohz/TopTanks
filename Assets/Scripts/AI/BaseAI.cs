@@ -37,8 +37,8 @@ public class BaseAI : MonoBehaviour
     /// </summary>
     /// <param name="distance">The distance to move</param>
     /// <returns></returns>
-    public IEnumerator Ahead(float distance) {
-        yield return Tank.__Ahead(distance);
+    public void Ahead(float distance) {
+        Tank.__Ahead(distance);
     }
 
     public IEnumerator MoveToTarget(Transform target)
@@ -110,7 +110,7 @@ public class BaseAI : MonoBehaviour
     //    yield return Tank.__FireRight(power);
     //}
 
-    public virtual IEnumerator RunAI() {
-        yield return null;
+    public virtual void RunAI() {
+        
     }
 }

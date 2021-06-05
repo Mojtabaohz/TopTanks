@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,17 +19,22 @@ public class Bullet : MonoBehaviour
         
     }
 
-    
+    private void Start()
+    {
+        gameObject.GetComponent<Rigidbody>().AddForce(gameObject.GetComponent<Transform>().forward * bulletSpeed, ForceMode.Impulse);
+        
+    }
+
     void OnTriggerEnter(Collider other){
         if (other.gameObject.tag.Equals("Enemy")||other.gameObject.tag.Equals("Player"))
         {
+            //Debug.Log("<color=red>other tag </color>" + other.gameObject.tag);
+            //Debug.Log("<color=red>compare tag </color>" + gameObject.CompareTag(other.gameObject.tag));
             DoDamage(dmg,other);
             Debug.Log("Damage Done");
             gameObject.SetActive(false);
-            //DoDamage(dmg,other);
         }
         //Destroy(gameObject);
-        
     }
 
 

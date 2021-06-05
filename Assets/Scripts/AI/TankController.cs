@@ -126,7 +126,7 @@ public class TankController : MonoBehaviour
     /// </summary>
     public void StartBattle() {
         //Debug.Log("Battle starts");
-        StartCoroutine(ai.RunAI());
+        ai.RunAI();
     }
 
     // Update is called once per frame
@@ -158,15 +158,14 @@ public class TankController : MonoBehaviour
     /// </summary>
     /// <param name="distance">The distance to move</param>
     /// <returns></returns>
-    public IEnumerator __Ahead(float distance) {
-        int numFrames = (int)(distance / (TankSpeed * Time.fixedDeltaTime));
-        for (int f = 0; f < numFrames; f++) {
-            transform.Translate(new Vector3(0f, 0f, TankSpeed * Time.fixedDeltaTime), Space.Self);
-            Vector3 clampedPosition = Vector3.Max(Vector3.Min(transform.position, new Vector3(SeaSize, 0, SeaSize)), new Vector3(-SeaSize, 0, -SeaSize));
-            transform.position = clampedPosition;
+    public void __Ahead(float distance) {
+        
+        transform.Translate(new Vector3(0f, 0f, TankSpeed * Time.fixedDeltaTime), Space.Self);
+        Vector3 clampedPosition = Vector3.Max(Vector3.Min(transform.position, new Vector3(SeaSize, 0, SeaSize)), new Vector3(-SeaSize, 0, -SeaSize));
+        transform.position = clampedPosition;
 
-            yield return new WaitForFixedUpdate();            
-        }
+                       
+        
     }
     
     public IEnumerator __MoveToTarget(Transform target)
@@ -245,14 +244,16 @@ public class TankController : MonoBehaviour
     public void __Fire() {
         if (loaded)
         {
-            Debug.Log("fire");
+            
             loaded = false;
             GameObject projectile = Instantiate(BulletPrefab);
-            Physics.IgnoreCollision(projectile.GetComponent<Collider>(), emitter.parent.parent.GetComponent<Collider>());
+            projectile.tag = gameObject.tag;
             projectile.transform.position = emitter.position;
+            Debug.Log("<color=blue>emitter</color>" + emitter.position);
+            Physics.IgnoreCollision(projectile.GetComponent<Collider>(), emitter.parent.parent.GetComponent<Collider>());
             Vector3 rotation = projectile.transform.rotation.eulerAngles;
             projectile.transform.rotation = Quaternion.Euler(rotation.x, transform.eulerAngles.y, rotation.z);
-            projectile.GetComponent<Rigidbody>().AddForce(emitter.forward * 50, ForceMode.Impulse);
+            //projectile.GetComponent<Rigidbody>().AddForce(emitter.forward * 50, ForceMode.Impulse);
             Destroy(projectile, 2.0f);
             
         }
