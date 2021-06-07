@@ -33,7 +33,6 @@ public class CardDisplay : MonoBehaviour
         movementSpeedText.text = card.movementSpeed.ToString();
         healthText.text = card.baseHealth.ToString();
         armorText.text = card.armor.ToString();
-        
     }
 
 }
