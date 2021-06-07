@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Analytics;
 
 public class BattleButton : MonoBehaviour
 {
@@ -11,7 +12,12 @@ public class BattleButton : MonoBehaviour
     public int filledSlot;
 
 
-    
+    public float sceneTimer;
+    public void Update()
+    {
+        sceneTimer += Time.deltaTime;
+        
+    }
 
 
     public void CheckSlot()
@@ -30,6 +36,8 @@ public class BattleButton : MonoBehaviour
         if (filledSlot >= 3)
         {
             button.SetActive(true);
+            AnalyticsResult timeSpent = Analytics.CustomEvent("Time to complete the hand" + sceneTimer);
+            Debug.Log("Analytics Result"+ timeSpent +" : "+ sceneTimer );
         }
         else
         {

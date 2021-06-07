@@ -730,6 +730,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3993384568137196709, guid: 0209d6b1b1fee194a99e3d0a5a723849,
+        type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 1722453520}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0209d6b1b1fee194a99e3d0a5a723849, type: 3}
 --- !u!1 &456497195
@@ -2450,6 +2455,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1516610788}
     m_Modifications:
+    - target: {fileID: 8225958208371281790, guid: 0fe7a0b585a64ba4991a378e9d1159af,
+        type: 3}
+      propertyPath: m_Text
+      value: D
+      objectReference: {fileID: 0}
+    - target: {fileID: 8984080822398780276, guid: 0fe7a0b585a64ba4991a378e9d1159af,
+        type: 3}
+      propertyPath: m_Text
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 8984080824435576602, guid: 0fe7a0b585a64ba4991a378e9d1159af,
+        type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 1722453520}
     - target: {fileID: 8984080824435576603, guid: 0fe7a0b585a64ba4991a378e9d1159af,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4952,6 +4972,7 @@ MonoBehaviour:
   - {fileID: 985155640}
   button: {fileID: 793094729}
   filledSlot: 0
+  sceneTimer: 0
 --- !u!1 &1657976179
 GameObject:
   m_ObjectHideFlags: 0
