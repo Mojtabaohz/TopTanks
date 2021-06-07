@@ -887,10 +887,10 @@ MonoBehaviour:
   nameText: {fileID: 8984080822744791986}
   descriptionText: {fileID: 8984080823506180867}
   artworkImage: {fileID: 8984080822603704588}
-  powerText: {fileID: 8984080822860218310}
+  attackDamageText: {fileID: 8984080822860218310}
   healthText: {fileID: 8984080824120329754}
-  mobilityText: {fileID: 8984080822599770056}
-  defenceText: {fileID: 8984080822398780276}
+  movementSpeedText: {fileID: 8984080822599770056}
+  armorText: {fileID: 8984080822398780276}
 --- !u!114 &8984080824435576601
 MonoBehaviour:
   m_ObjectHideFlags: 0

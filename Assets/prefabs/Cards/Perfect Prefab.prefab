@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 5874526179639768667}
   - component: {fileID: 5874526179639768664}
   m_Layer: 5
-  m_Name: KV-2
+  m_Name: Perfect Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -199,10 +199,10 @@ MonoBehaviour:
   nameText: {fileID: 5874526181328585456}
   descriptionText: {fileID: 5874526180068336193}
   artworkImage: {fileID: 5874526181440213070}
-  powerText: {fileID: 5874526181284628100}
+  attackDamageText: {fileID: 5874526181284628100}
   healthText: {fileID: 5874526179483975512}
-  mobilityText: {fileID: 5874526181444675210}
-  defenceText: {fileID: 5874526181108365878}
+  movementSpeedText: {fileID: 5874526181444675210}
+  armorText: {fileID: 5874526181108365878}
 --- !u!114 &5874526179639768667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -544,7 +544,7 @@ GameObject:
   - component: {fileID: 5874526181108365873}
   - component: {fileID: 5874526181108365878}
   m_Layer: 5
-  m_Name: Defence
+  m_Name: Armor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -622,7 +622,7 @@ GameObject:
   - component: {fileID: 5874526181284628103}
   - component: {fileID: 5874526181284628100}
   m_Layer: 5
-  m_Name: Power
+  m_Name: AttackDamage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -854,7 +854,7 @@ GameObject:
   - component: {fileID: 5874526181444675205}
   - component: {fileID: 5874526181444675210}
   m_Layer: 5
-  m_Name: Mobility
+  m_Name: MovementSpeed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
