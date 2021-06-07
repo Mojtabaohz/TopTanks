@@ -14,10 +14,18 @@ public class TankInfo : ScriptableObject
     {
         LT,MT, HT, TD, SPG
     }
+
+    public enum TankRarity
+    {
+        Common, Rare, Epic
+    }
     [Header("General Info")]
     public TankClass tankClass;
+
+    public TankRarity tankRarity;
     public new string name;
     public string description;
+    public int score;
     public Sprite artwork;
     public GameObject initialPrefab;
     [Header("Power")]

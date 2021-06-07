@@ -10,12 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7a5c5c4dd306fe14e93e1b577cb2e467, type: 3}
-  m_Name: KV-3
+  m_Name: ZTQ15
   m_EditorClassIdentifier: 
-  name: KV-3
-  description: Heavy Armored
-  artwork: {fileID: 21300000, guid: 93697694877007a40b8941b26011d08b, type: 3}
-  power: 50
-  health: 1800
-  defence: 100
-  mobility: 7
+  tankClass: 0
+  tankRarity: 1
+  name: ZTQ15
+  description: 
+  score: 155
+  artwork: {fileID: 21300000, guid: 04d08562ed0ad9445994227a80dee406, type: 3}
+  initialPrefab: {fileID: 0}
+  attackDamage: 128
+  reloadTime: 0
+  peneteration: 0
+  baseHealth: 155
+  armor: 30
+  turretRotationSpeed: 0
+  tankRotationSpeed: 0
+  movementSpeed: 309
