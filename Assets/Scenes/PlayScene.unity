@@ -12104,6 +12104,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: 3D_ZTQ_15_Tank_Destroyed
       objectReference: {fileID: 0}
+    - target: {fileID: 3642041918165747790, guid: e8094e332fd043745b7f4a806c6fdea6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4757202475202603163, guid: e8094e332fd043745b7f4a806c6fdea6,
         type: 3}
       propertyPath: m_LocalPosition.x
