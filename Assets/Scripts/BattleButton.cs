@@ -36,8 +36,12 @@ public class BattleButton : MonoBehaviour
         if (filledSlot >= 3)
         {
             button.SetActive(true);
-            AnalyticsResult timeSpent = Analytics.CustomEvent("Time to complete the hand" + sceneTimer);
-            Debug.Log("Analytics Result"+ timeSpent +" : "+ sceneTimer );
+            AnalyticsResult timeSpent = Analytics.CustomEvent("Time to complete the hand" ,
+            new Dictionary<string, object>
+            {
+                {"Timer" , sceneTimer} 
+            } );
+            //Debug.Log("Analytics Result"+ timeSpent +" : "+ sceneTimer );
         }
         else
         {

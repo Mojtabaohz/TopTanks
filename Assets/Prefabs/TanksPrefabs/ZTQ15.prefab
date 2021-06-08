@@ -5178,7 +5178,7 @@ GameObject:
   - component: {fileID: 7054500731997716115}
   - component: {fileID: 4703594231726676161}
   m_Layer: 0
-  m_Name: 3D_ZTQ_15_Tank
+  m_Name: ZTQ15
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5219,8 +5219,8 @@ MonoBehaviour:
   turretBase: {fileID: 976169950147824756}
   barrels: {fileID: 0}
   ElevationSpeed: 30
-  MaxElevation: 60
-  MaxDepression: 5
+  MaxElevation: 0
+  MaxDepression: 0
   TraverseSpeed: 60
   hasLimitedTraverse: 0
   LeftLimit: 120
@@ -5293,7 +5293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39512d4b7fcf2ff479189e07fe73bcae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 150
   currentHealth: 0
   alive: 1
   slider: {fileID: 3886843334435356983}
@@ -6127,12 +6127,12 @@ PrefabInstance:
     - target: {fileID: 3443464480865012690, guid: 3c1b5c3893d316f45b4ca56ebe4c122d,
         type: 3}
       propertyPath: looping
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3443464480865012690, guid: 3c1b5c3893d316f45b4ca56ebe4c122d,
         type: 3}
       propertyPath: playOnAwake
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3749859346490839318, guid: 3c1b5c3893d316f45b4ca56ebe4c122d,
         type: 3}
@@ -6232,12 +6232,12 @@ PrefabInstance:
     - target: {fileID: 3443464480865012690, guid: 3c1b5c3893d316f45b4ca56ebe4c122d,
         type: 3}
       propertyPath: looping
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3443464480865012690, guid: 3c1b5c3893d316f45b4ca56ebe4c122d,
         type: 3}
       propertyPath: playOnAwake
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3749859346490839318, guid: 3c1b5c3893d316f45b4ca56ebe4c122d,
         type: 3}
