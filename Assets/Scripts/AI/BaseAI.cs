@@ -41,9 +41,9 @@ public class BaseAI : MonoBehaviour
         Tank.__Ahead(distance);
     }
 
-    public IEnumerator MoveToTarget(Transform target)
+    public void MoveToTarget(Transform target)
     {
-        yield return Tank.__MoveToTarget(target);
+        Tank.__MoveToTarget(target);
     }
     /// <summary>
     /// Move the ship backwards by the given distance

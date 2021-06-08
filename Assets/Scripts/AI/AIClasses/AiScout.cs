@@ -14,25 +14,57 @@ public class AiScout : BaseAI
     public List<String> targetName = new List<String>();
     public List<float> targetDistance = new List<float>();
     public List<Transform> targetTransform = new List<Transform>();
-    
-    public void Update() {
-        
-            if (Tank.target)
-            {
-                Ahead(20);
-                //Debug.Log(Tank.GetComponent<HealthBar>().currentHealth);
-                //Debug.Log("move to target", Tank.target);
-                //yield return TurretLookAt(Tank.target);
-                Fire();
-                
 
+    
+
+    private void FindTarget(bool ally)
+    {
+        if (ally)
+        {
+            int rnd = Random.Range(0, Tank.enemiesList.Length);
+            mainTarget = Tank.enemiesList[rnd].transform;
+        }
+        else
+        {
+            int rnd2 = Random.Range(0, Tank.friendList.Length);
+            mainTarget = Tank.friendList[rnd2].transform;
+        }
+        
+    }
+    public void Update()
+    {
+        if (gameObject.CompareTag("Enemy"))
+        {
+            if (mainTarget)
+            {
+                MoveToTarget(mainTarget);
+                Fire();
             }
             else
             {
-                LookForNewTarget();
-                
+                FindTarget(false);
             } 
+        }
+        else
+        {
+            if (mainTarget)
+            {
+                MoveToTarget(mainTarget);
+                Fire();
+            }
+            else
+            {
+                FindTarget(true);
+            } 
+        }
         
+        
+            
+                
+                //Debug.Log(Tank.GetComponent<HealthBar>().currentHealth);
+                //Debug.Log("move to target", Tank.target);
+                //yield return TurretLookAt(Tank.target);
+                //LookForNewTarget();
 
     }
 

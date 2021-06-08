@@ -15,9 +15,14 @@ public class ResultManager : MonoBehaviour
 
     void Start()
     {
+        StartCoroutine(DelayCall(45f));
+    }
+    private IEnumerator DelayCall(float time)
+    {
+        yield return new WaitForSeconds(time);
+        EndGame();
         
     }
-
     // Update is called once per frame
     void Update()
     {

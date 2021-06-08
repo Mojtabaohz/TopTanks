@@ -47,6 +47,7 @@ public class TankController : MonoBehaviour
     public NavMeshAgent navAgent = null;
     public Transform target = null;
     public GameObject[] enemiesList = null;
+    public GameObject[] friendList = null;
     /// <summary>
     /// the AI that will control this Tank. Is set by TankInfo.
     /// </summary>
@@ -69,6 +70,7 @@ public class TankController : MonoBehaviour
         navAgent.angularSpeed = RotationSpeed;
         navAgent.stoppingDistance = 30;
         enemiesList = GameObject.FindGameObjectsWithTag("Enemy");
+        friendList = GameObject.FindGameObjectsWithTag("Player");
         ReloadBullet();
         StartBattle();
     }
@@ -81,7 +83,7 @@ public class TankController : MonoBehaviour
             turretAim.isIdle = target == null;
         else
             turretAim.aimPosition = target.position;
-        
+        //
     }
 
     
@@ -150,7 +152,7 @@ public class TankController : MonoBehaviour
         }
     }
 
-    void DistanceDetection(){
+    void DistanceDetection(Transform target){
         distanceToTarget = Vector3.Distance(transform.position, target.transform.position);
     }
     /// <summary>
@@ -168,14 +170,14 @@ public class TankController : MonoBehaviour
         
     }
     
-    public IEnumerator __MoveToTarget(Transform target)
+    public void __MoveToTarget(Transform target)
     {
-        DistanceDetection();
+        DistanceDetection(target);
         if (distanceToTarget > fireRange)
         {
             navAgent.isStopped = false;
             navAgent.SetDestination(target.position);
-            yield return new WaitForFixedUpdate();
+            
         }
         else
         {
