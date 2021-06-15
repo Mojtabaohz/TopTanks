@@ -99,17 +99,16 @@ public class Outline : MonoBehaviour {
     needsUpdate = true;
 
     SetColor();
-    Debug.Log("ARE YOU AWAKE!?" + gameObject.CompareTag("Player"));
   }
 
   void SetColor () {
     if (gameObject.CompareTag("Player")){
       outlineColor = Color.blue;
-      Debug.Log("NOPE");
+      outlineWidth = 0.6f;
     }
     else if(gameObject.CompareTag("Enemy")) {
       outlineColor = Color.red;
-      Debug.Log("NO RED");
+      outlineWidth = 0.6f;
     }
   }
 
