@@ -5177,6 +5177,7 @@ GameObject:
   - component: {fileID: 7190398865782222750}
   - component: {fileID: 7054500731997716115}
   - component: {fileID: 4703594231726676161}
+  - component: {fileID: 438089010}
   m_Layer: 0
   m_Name: ZTQ15
   m_TagString: Player
@@ -5195,8 +5196,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 976169950147824756}
   - {fileID: 6286866002296825829}
+  - {fileID: 976169950147824756}
   - {fileID: 6286866000913913640}
   - {fileID: 1241327726437942211}
   - {fileID: 195800900182577204}
@@ -5350,6 +5351,25 @@ MonoBehaviour:
   navAgent: {fileID: 733003780830869451}
   target: {fileID: 0}
   enemiesList: []
+  friendList: []
+--- !u!114 &438089010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3582226334812038042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &4589222523790229414
 GameObject:
   m_ObjectHideFlags: 0
@@ -5464,7 +5484,7 @@ Transform:
   - {fileID: 5362773345291811454}
   - {fileID: 5316909391930759975}
   m_Father: {fileID: 6286866002144738312}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7085464567002943648
 MeshFilter:
@@ -5823,7 +5843,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6286866002377499579
 Transform:
   m_ObjectHideFlags: 0
@@ -5831,7 +5851,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6286866002377499580}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5876,7 +5896,7 @@ Transform:
   - {fileID: 6042661766309950678}
   - {fileID: 6286866002377499579}
   m_Father: {fileID: 6286866002144738312}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2214859885117816983
 MeshFilter:
@@ -6077,12 +6097,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf9dab070e9d0dd458d210ce8b56f98e, type: 3}
---- !u!224 &3317591428229534023 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 3595884894223360506, guid: cf9dab070e9d0dd458d210ce8b56f98e,
-    type: 3}
-  m_PrefabInstance: {fileID: 2300589069956083901}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &3886843334435356983 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3034725736964272522, guid: cf9dab070e9d0dd458d210ce8b56f98e,
@@ -6107,6 +6121,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &3317591428229534023 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3595884894223360506, guid: cf9dab070e9d0dd458d210ce8b56f98e,
+    type: 3}
+  m_PrefabInstance: {fileID: 2300589069956083901}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6286866000957247232
 PrefabInstance:
   m_ObjectHideFlags: 0
