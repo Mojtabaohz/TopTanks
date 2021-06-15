@@ -985,7 +985,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: KV-2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 611408385, guid: f8706da70c6293a4c91b6fc910a83883, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f8706da70c6293a4c91b6fc910a83883, type: 3}
 --- !u!4 &65717668 stripped
 Transform:
@@ -2386,24 +2387,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 178737186}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &222771621
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 222771613}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 0
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}
-  outlineWidth: 2
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []
 --- !u!1001 &242815284
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5991,7 +5974,8 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 438089010, guid: f83cc473d3e5ab142bd6f93a3eb15341, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f83cc473d3e5ab142bd6f93a3eb15341, type: 3}
 --- !u!1001 &863771316
 PrefabInstance:
@@ -6979,7 +6963,8 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 731400466, guid: 7b24857f26e8a0946870000b1e3ec37d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7b24857f26e8a0946870000b1e3ec37d, type: 3}
 --- !u!4 &977277650 stripped
 Transform:
@@ -7413,30 +7398,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1076037598}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1121934127 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2328811791714369128, guid: 9a5db3ac7db36d642965f01a8316a1e3,
-    type: 3}
-  m_PrefabInstance: {fileID: 497738582}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1121934134
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1121934127}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 0
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}
-  outlineWidth: 2
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []
 --- !u!1001 &1124442967
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7627,9 +7588,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1158229895}
   - component: {fileID: 1158229896}
+  - component: {fileID: 1158229897}
   m_Layer: 0
   m_Name: EnemyTanks
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7666,6 +7628,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spottedEnemies: []
   score: 0
+--- !u!114 &1158229897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1158229894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &1162024306
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12578,9 +12558,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1975576038}
   - component: {fileID: 1975576039}
+  - component: {fileID: 1975576040}
   m_Layer: 0
   m_Name: PlayerTanks
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12616,6 +12597,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spottedEnemies: []
   score: 0
+--- !u!114 &1975576040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1975576037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &1986113552
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13270,30 +13269,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2074043954}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2117619802 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2328811791714369128, guid: 9a5db3ac7db36d642965f01a8316a1e3,
-    type: 3}
-  m_PrefabInstance: {fileID: 704748589}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2117619809
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2117619802}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 0
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}
-  outlineWidth: 2
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []
 --- !u!1 &2134403935
 GameObject:
   m_ObjectHideFlags: 0
