@@ -251,7 +251,7 @@ public class TankController : MonoBehaviour
             GameObject projectile = Instantiate(BulletPrefab);
             projectile.tag = gameObject.tag;
             projectile.transform.position = emitter.position;
-            Debug.Log("<color=blue>emitter</color>" + emitter.position);
+            //Debug.Log("<color=blue>emitter</color>" + emitter.position);
             Physics.IgnoreCollision(projectile.GetComponent<Collider>(), emitter.parent.parent.GetComponent<Collider>());
             Vector3 rotation = projectile.transform.rotation.eulerAngles;
             projectile.transform.rotation = Quaternion.Euler(rotation.x, transform.eulerAngles.y, rotation.z);

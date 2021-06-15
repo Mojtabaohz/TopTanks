@@ -9,8 +9,10 @@ public class SceneDataTracker : MonoBehaviour
 {
     
     
+    
     private GameObject currentScene;
     private static bool created = false;
+    private bool gameIsPaused = false;
 
     void Awake()
     {
@@ -34,11 +36,28 @@ public class SceneDataTracker : MonoBehaviour
         currentScene.AddComponent<SceneDataSender>();
     }
 
+    public void PauseGame()
+    {
+        if (gameIsPaused)
+        {
+            Time.timeScale = 1;
+            gameIsPaused = false;
+            Debug.Log("Unpause");
+        }
+        else
+        {
+            Time.timeScale = 0;
+            gameIsPaused = true;
+            Debug.Log("pause");
+        }
+        
+        
+    }
+
     
 
     public void LoadScene(string sceneName)
     {
-        
         SceneManager.LoadScene(sceneName);
     }
 

@@ -23,8 +23,8 @@ public class SceneDataSender : MonoBehaviour
                 {currentSceneName, sceneTimer}
             }
         );
-        Debug.Log("Analytics Result"+ timeSpent +" : "+ sceneTimer );
-        Debug.Log("Analytics Result sceneName : "+ SceneManager.GetActiveScene().name );
+        //Debug.Log("Analytics Result"+ timeSpent +" : "+ sceneTimer );
+        //Debug.Log("Analytics Result sceneName : "+ SceneManager.GetActiveScene().name );
     }
     // Update is called once per frame
     public void Update()

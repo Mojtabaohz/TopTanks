@@ -31,7 +31,7 @@ public class Bullet : MonoBehaviour
             //Debug.Log("<color=red>other tag </color>" + other.gameObject.tag);
             //Debug.Log("<color=red>compare tag </color>" + gameObject.CompareTag(other.gameObject.tag));
             DoDamage(dmg,other);
-            Debug.Log("Damage Done");
+            //Debug.Log("Damage Done");
             gameObject.SetActive(false);
         }
         //Destroy(gameObject);
