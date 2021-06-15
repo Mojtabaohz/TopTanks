@@ -104,11 +104,9 @@ public class Outline : MonoBehaviour {
   void SetColor () {
     if (gameObject.CompareTag("Player")){
       outlineColor = Color.blue;
-      outlineWidth = 0.6f;
     }
     else if(gameObject.CompareTag("Enemy")) {
       outlineColor = Color.red;
-      outlineWidth = 0.6f;
     }
   }
 
