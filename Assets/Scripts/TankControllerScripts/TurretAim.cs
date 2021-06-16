@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Serialization;
 
+
 public class TurretAim : MonoBehaviour
     {
         [Header("Rotations")]
@@ -90,8 +91,6 @@ public class TurretAim : MonoBehaviour
 
         private void Update()
         {
-            Debug.Log("Idle" +isIdle);
-            Debug.Log("Aimed"+isAimed);
             if (isIdle)
             {
                 if (!IsTurretAtRest)
@@ -189,8 +188,8 @@ public class TurretAim : MonoBehaviour
                 barrels.localEulerAngles = Vector3.right * -elevation;
 
 #if UNITY_EDITOR
-            if (DrawDebugRay)
-                Debug.DrawRay(barrels.position, barrels.forward * localTargetPos.magnitude, Color.red);
+            if (DrawDebugRay){}
+                //Debug.DrawRay(barrels.position, barrels.forward * localTargetPos.magnitude, Color.red);
 #endif
         }
 
@@ -224,10 +223,8 @@ public class TurretAim : MonoBehaviour
             }
 
 #if UNITY_EDITOR
-            if (DrawDebugRay && !hasBarrels)
-                Debug.DrawRay(turretBase.position,
-                    turretBase.forward * flattenedVecForBase.magnitude,
-                    Color.red);
+            if (DrawDebugRay && !hasBarrels){}
+                //Debug.DrawRay(turretBase.position,turretBase.forward * flattenedVecForBase.magnitude,Color.red);
 #endif
         }
 

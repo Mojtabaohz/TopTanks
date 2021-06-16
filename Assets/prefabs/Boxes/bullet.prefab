@@ -124,5 +124,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 5969628609626260578}
-  bulletSpeed: 100
   dmg: 50

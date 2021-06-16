@@ -15,7 +15,7 @@ public class AmmoBox : MonoBehaviour
         SetBulletAttribute(bullet);
     }
     private void OnTriggerEnter(Collider obj){
-        if(obj.gameObject.tag.Equals("Player")){
+        if(obj.gameObject.tag.Equals("Player") || obj.gameObject.tag.Equals("Enemy")){
             //Debug.Log("Object report "+ obj.gameObject + " . " + obj.gameObject.transform.GetChild(1));
             if(obj.gameObject.GetComponent<shooting>().loaded){
                 obj.gameObject.GetComponent<shooting>().DestroyCurrentBullet(obj.gameObject.transform.GetChild((obj.gameObject.transform.childCount-1)).gameObject);
@@ -48,7 +48,7 @@ public class AmmoBox : MonoBehaviour
     }
 
     void SetBulletAttribute(GameObject obj){
-        obj.GetComponent<Bullet>().bulletSpeed = bulletSpeed;
+        //obj.GetComponent<Bullet>().bulletSpeed = bulletSpeed;
         obj.GetComponent<Bullet>().dmg = dmg;
         //bullet.GetComponent<Bullet>().aoe = aoe;
     }

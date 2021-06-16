@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Random=UnityEngine.Random;
 
@@ -11,6 +14,9 @@ using Random=UnityEngine.Random;
 /// </summary>
 public class TankController : MonoBehaviour
 {
+    //Tank info data
+    private int attackDamage = 20;
+    private int shellVelocity = 150;
     private float distanceToTarget;
     public int fireRange = 100;
     private bool loaded = false;
@@ -21,6 +27,7 @@ public class TankController : MonoBehaviour
      */
     public TurretAim turretAim = null;
     private bool isIdle = false;
+    //[FormerlySerializedAs("TargetPoint")] public Transform targetPoint = null;
     
     
     private const float reloadTime = 2;
@@ -46,8 +53,8 @@ public class TankController : MonoBehaviour
     // navmesh agent to access functions for finding new target and moving patterns
     public NavMeshAgent navAgent = null;
     public Transform target = null;
-    public GameObject[] enemiesList = null;
-    public GameObject[] friendList = null;
+    public  List<GameObject> enemiesList = new List<GameObject>();
+    public List<GameObject> friendList = new List<GameObject>();
     /// <summary>
     /// the AI that will control this Tank. Is set by TankInfo.
     /// </summary>
@@ -65,10 +72,12 @@ public class TankController : MonoBehaviour
         ai = gameObject.AddComponent<AiScout>();
         SetAI(ai);
         turretAim = gameObject.GetComponent<TurretAim>();
+        target = gameObject.transform;
         //active = true;
         navAgent.speed = TankSpeed;
         navAgent.angularSpeed = RotationSpeed;
         navAgent.stoppingDistance = 30;
+
         UpdateTankList();
         ReloadBullet();
     }
@@ -77,12 +86,12 @@ public class TankController : MonoBehaviour
     {
         if (gameObject.CompareTag("Player"))
         {
-            int rnd = Random.Range(0, enemiesList.Length);
+            int rnd = Random.Range(0, enemiesList.Count);
             target = enemiesList[rnd].transform;
         }
         else
         {
-            int rnd2 = Random.Range(0, friendList.Length);
+            int rnd2 = Random.Range(0, friendList.Count);
             target = friendList[rnd2].transform;
         }
         
@@ -90,18 +99,38 @@ public class TankController : MonoBehaviour
     
     public void UpdateTankList()
     {
-        if (!target)
+        
+        if (tankListUpdateBool)
         {
-            Array.Clear(enemiesList,0,enemiesList.Length);
-            Array.Clear(friendList,0,friendList.Length);
-            enemiesList = GameObject.FindGameObjectsWithTag("Enemy");
-            friendList = GameObject.FindGameObjectsWithTag("Player");
+            Debug.Log("tank List updated");
+            enemiesList.Clear();
+            friendList.Clear();
+            //Array.Clear(enemiesList,0,enemiesList.Count);
+            //Array.Clear(friendList,0,friendList.Count);
+            foreach (GameObject tanks in GameObject.FindGameObjectsWithTag("Enemy"))
+            {
+                enemiesList.Add(tanks);
+            }
+            //enemiesList = GameObject.FindGameObjectsWithTag("Enemy");
+            foreach (GameObject tanks in GameObject.FindGameObjectsWithTag("Player"))
+            {
+                friendList.Add(tanks);
+            }
+            //friendList = GameObject.FindGameObjectsWithTag("Player");
             tankListUpdateBool = false;
         }
     }
     public void Update()
     {
+        Debug.DrawRay(emitter.position, emitter.transform.forward * emitter.transform.position.magnitude, Color.red);
         ReloadBullet();
+        if (!target)
+            turretAim.isIdle = target == null;
+        else
+        {
+            turretAim.aimPosition = target.position;
+        }
+            
     }
 
     
@@ -184,7 +213,7 @@ public class TankController : MonoBehaviour
     public void __MoveToTarget(Transform target)
     {
         DistanceDetection(target);
-        if (distanceToTarget > fireRange)
+        if (distanceToTarget+1 > fireRange)
         {
             navAgent.isStopped = false;
             navAgent.SetDestination(target.position);
@@ -230,17 +259,36 @@ public class TankController : MonoBehaviour
     public void __Fire() {
         if (loaded)
         {
-            
-            loaded = false;
-            GameObject projectile = Instantiate(BulletPrefab);
-            projectile.tag = gameObject.tag;
-            projectile.transform.position = emitter.position;
-            //Debug.Log("<color=blue>emitter</color>" + emitter.position);
-            Physics.IgnoreCollision(projectile.GetComponent<Collider>(), emitter.parent.parent.GetComponent<Collider>());
-            Vector3 rotation = projectile.transform.rotation.eulerAngles;
-            projectile.transform.rotation = Quaternion.Euler(rotation.x, transform.eulerAngles.y, rotation.z);
-            //projectile.GetComponent<Rigidbody>().AddForce(emitter.forward * 50, ForceMode.Impulse);
-            Destroy(projectile, 2.0f);
+            if (distanceToTarget<= fireRange)
+            {
+                loaded = false;
+                RaycastHit hit;
+                if (target != null)
+                {
+                    if (Physics.Raycast(emitter.transform.position, emitter.transform.forward, out hit,fireRange+1))
+                    {
+                        //Debug.Log(hit.transform.name);
+                
+                        HealthBar hitTarget = hit.transform.GetComponent<HealthBar>();
+                        if (hitTarget != null)
+                        {
+                            hitTarget.TakeDamage(attackDamage);
+                        }
+                    }
+                }
+                
+            }
+            /*
+        GameObject projectile = Instantiate(BulletPrefab);
+        projectile.transform.position = emitter.position;
+        //Debug.Log("<color=blue>emitter</color>" + emitter.position);
+        Physics.IgnoreCollision(projectile.GetComponent<Collider>(), emitter.parent.parent.GetComponent<Collider>());
+        projectile.transform.forward = emitter.transform.forward;
+        Vector3 rotation = projectile.transform.rotation.eulerAngles;
+        projectile.transform.rotation = Quaternion.Euler(rotation.x, transform.eulerAngles.y, rotation.z);
+        projectile.GetComponent<Rigidbody>().AddForce(emitter.forward * shellVelocity, ForceMode.Impulse);
+        Destroy(projectile, 2.0f);
+        */
             
         }
         

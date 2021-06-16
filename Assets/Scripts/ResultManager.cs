@@ -9,10 +9,6 @@ public class ResultManager : MonoBehaviour
     public GameObject player02;
     public int score;
     
-    protected float Timer;
-    protected float ChaosTimer;
-    
-
     void Start()
     {
         //StartCoroutine(DelayCall(45f));

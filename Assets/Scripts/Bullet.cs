@@ -6,7 +6,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public GameObject bullet;
-    public int bulletSpeed = 100;
+    //public int bulletSpeed = 100;
     public int dmg =  5;
     //public bool damageOverTime = false;
     //public float damageInterval = 1f;
@@ -19,11 +19,7 @@ public class Bullet : MonoBehaviour
         
     }
 
-    private void Start()
-    {
-        gameObject.GetComponent<Rigidbody>().AddForce(gameObject.GetComponent<Transform>().forward * bulletSpeed, ForceMode.Impulse);
-        
-    }
+    
 
     void OnTriggerEnter(Collider other){
         if (other.gameObject.tag.Equals("Enemy")||other.gameObject.tag.Equals("Player"))

@@ -30,7 +30,7 @@ public class HealthBar : MonoBehaviour
             alive = false;
             FindObjectOfType<ResultManager>().score++;
             //Debug.Log(FindObjectOfType<ResultManager>().score);
-            
+            tankdetail.tankListUpdateBool = true;
             Destroy(gameObject);
 
         }
