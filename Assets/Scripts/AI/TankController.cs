@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
@@ -53,8 +54,8 @@ public class TankController : MonoBehaviour
     // navmesh agent to access functions for finding new target and moving patterns
     public NavMeshAgent navAgent = null;
     public Transform target = null;
-    public  List<GameObject> enemiesList = new List<GameObject>();
-    public List<GameObject> friendList = new List<GameObject>();
+    public  List<GameObject> redList = new List<GameObject>();
+    public List<GameObject> blueList = new List<GameObject>();
     /// <summary>
     /// the AI that will control this Tank. Is set by TankInfo.
     /// </summary>
@@ -71,11 +72,11 @@ public class TankController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-        ai = gameObject.AddComponent<AiScout>();
-        SetAI(ai);
         turretAim = gameObject.GetComponent<TurretAim>();
         target = gameObject.transform;
+        ai = gameObject.AddComponent<AiScout>();
+        SetAI(ai);
+        
         //active = true;
         navAgent.speed = TankSpeed;
         navAgent.angularSpeed = RotationSpeed;
@@ -85,48 +86,50 @@ public class TankController : MonoBehaviour
         ReloadBullet();
     }
 
-    private void FindTarget()
-    {
-        if (gameObject.CompareTag("Player"))
-        {
-            int rnd = Random.Range(0, enemiesList.Count);
-            target = enemiesList[rnd].transform;
-        }
-        else
-        {
-            int rnd2 = Random.Range(0, friendList.Count);
-            target = friendList[rnd2].transform;
-        }
-        
-    }
+    
     
     public void UpdateTankList()
     {
-        
         if (tankListUpdateBool)
         {
-            Debug.Log("tank List updated");
-            enemiesList.Clear();
-            friendList.Clear();
-            //Array.Clear(enemiesList,0,enemiesList.Count);
-            //Array.Clear(friendList,0,friendList.Count);
             foreach (GameObject tanks in GameObject.FindGameObjectsWithTag("Enemy"))
             {
-                enemiesList.Add(tanks);
+                redList.Add(tanks);
             }
             //enemiesList = GameObject.FindGameObjectsWithTag("Enemy");
             foreach (GameObject tanks in GameObject.FindGameObjectsWithTag("Player"))
             {
-                friendList.Add(tanks);
+                blueList.Add(tanks);
             }
-            //friendList = GameObject.FindGameObjectsWithTag("Player");
+
             tankListUpdateBool = false;
+            //friendList = GameObject.FindGameObjectsWithTag("Player"); 
         }
+        else
+        {
+            foreach (GameObject redTank in redList.ToList())
+            {
+                if (!redTank.gameObject.activeSelf)
+                {
+                    redList.Remove(redTank);
+                }
+            }
+            foreach (GameObject blueTank in blueList.ToList())
+            {
+                if (!blueTank.gameObject.activeSelf)
+                {
+                    redList.Remove(blueTank);
+                }
+            }
+        }
+            
+            
     }
     public void Update()
     {
-        Debug.DrawRay(emitter.position, emitter.transform.forward * emitter.transform.position.magnitude, Color.red);
+        //Debug.DrawRay(emitter.position, emitter.transform.forward * emitter.transform.position.magnitude, Color.red);
         ReloadBullet();
+        
         if (!target)
             turretAim.isIdle = target == null;
         else
@@ -216,7 +219,7 @@ public class TankController : MonoBehaviour
     public void __MoveToTarget(Transform target)
     {
         DistanceDetection(target);
-        if (distanceToTarget+1 > fireRange)
+        if (distanceToTarget > fireRange)
         {
             navAgent.isStopped = false;
             navAgent.SetDestination(target.position);
@@ -262,13 +265,13 @@ public class TankController : MonoBehaviour
     public void __Fire() {
         if (loaded)
         {
-            if (distanceToTarget<= fireRange)
-            {
-                loaded = false;
+            loaded = false;
+            //Debug.Log("fire"+gameObject);
+            //Debug.DrawRay(emitter.transform.position,emitter.transform.forward* emitter.transform.position.magnitude,Color.red,1f);
                 RaycastHit hit;
                 if (target != null)
                 {
-                    if (Physics.Raycast(emitter.transform.position, emitter.transform.forward, out hit,fireRange+1))
+                    if (Physics.Raycast(emitter.transform.position, emitter.transform.forward, out hit,fireRange))
                     {
                         //Debug.Log(hit.transform.name);
                 
@@ -284,7 +287,6 @@ public class TankController : MonoBehaviour
                     }
                 }
                 
-            }
             /*
         GameObject projectile = Instantiate(BulletPrefab);
         projectile.transform.position = emitter.position;

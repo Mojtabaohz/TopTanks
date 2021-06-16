@@ -21,22 +21,21 @@ public class AiScout : BaseAI
     {
         if (gameObject.CompareTag("Player"))
         {
-            int rnd = Random.Range(0, Tank.enemiesList.Count);
-            if (Tank.enemiesList.Count>0)
+            if (Tank.redList.Count>0)
             {
-                mainTarget = Tank.enemiesList[rnd].transform;
-                    Tank.target = mainTarget;
+                int rnd = Random.Range(0, Tank.redList.Count);
+                mainTarget = Tank.redList[rnd].transform;
+                Tank.target = mainTarget;
             }
             
         }
         else
         {
-            int rnd2 = Random.Range(0, Tank.friendList.Count);
-            if (Tank.friendList.Count>0)
+            if (Tank.blueList.Count>0)
             {
-                
-                    mainTarget = Tank.friendList[rnd2].transform;
-                    Tank.target = mainTarget;
+                int rnd2 = Random.Range(0, Tank.blueList.Count);
+                mainTarget = Tank.blueList[rnd2].transform;
+                Tank.target = mainTarget;
 
             }
             
@@ -50,10 +49,16 @@ public class AiScout : BaseAI
         if (!mainTarget)
         {
             //Debug.Log("find a new target");
-            //Tank.turretAim.IsIdle = mainTarget == null;
+            //Tank.turretAim.isIdle = mainTarget == null;
             Tank.UpdateTankList();
             FindTarget();
             
+        }
+        
+        else if (!mainTarget.gameObject.activeSelf)
+        {
+            Tank.UpdateTankList();
+            FindTarget();
         }
         //When AI have the target it will Aim and move towards it
         else
@@ -61,7 +66,9 @@ public class AiScout : BaseAI
             //Debug.Log("Move to target");
             MoveToTarget(mainTarget);
             Fire();
-            //Tank.turretAim.AimPosition = mainTarget.position;
+            Tank.target = mainTarget;
+            Debug.Log("update torret position");
+            //Tank.turretAim.aimPosition = mainTarget.position;
         }
 
     }
@@ -84,11 +91,5 @@ public class AiScout : BaseAI
 
     
 
-    private void WonderAround()
-    {
-        int rnd = Random.Range(0, Tank.enemiesList.Count);
-        //Debug.Log(rnd);
-        //Debug.Log(Tank.enemiesList[rnd]);
-        Tank.target = Tank.enemiesList[rnd].transform;
-    }
+
 }
