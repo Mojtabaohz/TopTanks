@@ -915,6 +915,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1975576038}
     m_Modifications:
+    - target: {fileID: -2909226267372496505, guid: f8706da70c6293a4c91b6fc910a83883,
+        type: 3}
+      propertyPath: impactEffect
+      value: 
+      objectReference: {fileID: 5118391494474765974, guid: 37b69e8cdfeec6746a440fd790ecf46a,
+        type: 3}
     - target: {fileID: 1473318776374604986, guid: f8706da70c6293a4c91b6fc910a83883,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -6009,6 +6015,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZTQ15
       objectReference: {fileID: 0}
+    - target: {fileID: 4703594231726676161, guid: f83cc473d3e5ab142bd6f93a3eb15341,
+        type: 3}
+      propertyPath: impactEffect
+      value: 
+      objectReference: {fileID: 5118391494474765974, guid: 37b69e8cdfeec6746a440fd790ecf46a,
+        type: 3}
     - target: {fileID: 6286866002144738312, guid: f83cc473d3e5ab142bd6f93a3eb15341,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7110,6 +7122,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1975576038}
     m_Modifications:
+    - target: {fileID: 977277653, guid: 7b24857f26e8a0946870000b1e3ec37d, type: 3}
+      propertyPath: impactEffect
+      value: 
+      objectReference: {fileID: 5118391494474765974, guid: 37b69e8cdfeec6746a440fd790ecf46a,
+        type: 3}
     - target: {fileID: 977277655, guid: 7b24857f26e8a0946870000b1e3ec37d, type: 3}
       propertyPath: DestroySound
       value: 

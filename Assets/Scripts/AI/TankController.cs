@@ -65,6 +65,9 @@ public class TankController : MonoBehaviour
     private float SeaSize = 50.0f;
     private float RotationSpeed = 180.0f;
 
+    // particle systems activated during combat
+    public GameObject impactEffect;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -274,6 +277,10 @@ public class TankController : MonoBehaviour
                         {
                             hitTarget.TakeDamage(attackDamage);
                         }
+
+                        GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
+                        Destroy(impactGO, 2f);
+
                     }
                 }
                 
