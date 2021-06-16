@@ -17,6 +17,9 @@ public class HealthBar : MonoBehaviour
     public Image fill;
     public AudioSource DestroySound;
 
+    // When the enemy dies, we play an explosion
+    public Transform explosion;
+
     public void TakeDamage(int damage){
         if(!alive){
             return;
@@ -32,6 +35,11 @@ public class HealthBar : MonoBehaviour
             //Debug.Log(FindObjectOfType<ResultManager>().score);
             tankdetail.tankListUpdateBool = true;
             Destroy(gameObject);
+            if(explosion)
+            {
+                GameObject exploder = ((Transform)Instantiate(explosion, this.transform.position, this.transform.rotation)).gameObject;
+                Destroy (exploder, 2.0f);
+            }
 
         }
         
