@@ -122,7 +122,7 @@ Transform:
   m_Children:
   - {fileID: 236139255}
   m_Father: {fileID: 8611529659413184294}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2127825988
 GameObject:
@@ -150,7 +150,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 13, z: 49}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4051136869993928744}
   m_Father: {fileID: 4350977513491998510}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5029,7 +5030,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2816699099085543825}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
   m_Children: []
@@ -5869,7 +5870,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -5972,8 +5973,66 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    m_BurstCount: 0
-    m_Bursts: []
+    m_BurstCount: 1
+    m_Bursts:
+    - serializedVersion: 2
+      time: 0
+      countCurve:
+        serializedVersion: 2
+        minMaxState: 0
+        scalar: 30
+        minScalar: 30
+        maxCurve:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          - serializedVersion: 3
+            time: 1
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        minCurve:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          - serializedVersion: 3
+            time: 1
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+      cycleCount: 1
+      repeatInterval: 0.01
+      probability: 1
   SizeModule:
     enabled: 0
     curve:
@@ -8758,7 +8817,7 @@ ParticleSystem:
     radiusScale: 1
   SubModule:
     serializedVersion: 2
-    enabled: 0
+    enabled: 1
     subEmitters:
     - serializedVersion: 3
       emitter: {fileID: 0}
@@ -9814,12 +9873,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4051136869993928745}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.89, z: 4.86}
-  m_LocalScale: {x: 0.099999994, y: 0.099999994, z: 0.099999994}
+  m_LocalPosition: {x: 0, y: 0.60000134, z: -0.3999977}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4051136869083103810}
-  m_Father: {fileID: 8611529659413184294}
-  m_RootOrder: 2
+  m_Father: {fileID: 2127825989}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4295713151514012608
 GameObject:
@@ -9929,7 +9988,7 @@ Transform:
   m_Children:
   - {fileID: 312990867510407004}
   m_Father: {fileID: 8611529659413184294}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4826600375969303196
 GameObject:
@@ -19807,7 +19866,6 @@ Transform:
   m_Children:
   - {fileID: 1779189517974708960}
   - {fileID: 4350977513491998510}
-  - {fileID: 4051136869993928744}
   - {fileID: 6797058523662774479}
   - {fileID: 7901993195785828608}
   - {fileID: 2049440674}
@@ -19829,7 +19887,6 @@ MonoBehaviour:
   maxHealth: 400
   currentHealth: 0
   alive: 1
-  tankdetail: {fileID: 0}
   slider: {fileID: 8526194018105944432}
   gradient:
     serializedVersion: 2
@@ -19862,6 +19919,8 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   fill: {fileID: 1080859258714526583}
   DestroySound: {fileID: 304778281154515424, guid: da95b22bf43e9dc479de5aa052d6873b,
+    type: 3}
+  explosion: {fileID: 6714832673058710252, guid: 1609d7181abdfce42836228a287f4051,
     type: 3}
 --- !u!195 &6588255805511182774
 NavMeshAgent:
@@ -19954,7 +20013,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireRange: 20
   tankListUpdateBool: 1
+  ShootingSound: {fileID: 0}
   turretAim: {fileID: 0}
+  muzzleFlash: {fileID: 629051684212127547}
   BulletPrefab: {fileID: 5969628609626260578, guid: 358cb4aac593f564cabdfaa2af538e11,
     type: 3}
   emitter: {fileID: 2127825989}
@@ -19962,8 +20023,10 @@ MonoBehaviour:
   states: []
   navAgent: {fileID: 6588255805511182774}
   target: {fileID: 0}
-  enemiesList: []
-  friendList: []
+  redList: []
+  blueList: []
+  impactEffect: {fileID: 5118391494474765974, guid: 37b69e8cdfeec6746a440fd790ecf46a,
+    type: 3}
 --- !u!1001 &6651432591523993850
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20014,7 +20077,7 @@ PrefabInstance:
     - target: {fileID: 3595884894223360506, guid: cf9dab070e9d0dd458d210ce8b56f98e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3595884894223360506, guid: cf9dab070e9d0dd458d210ce8b56f98e,
         type: 3}

@@ -22,6 +22,7 @@ public class TankController : MonoBehaviour
     public int fireRange = 100;
     private bool loaded = false;
     public bool tankListUpdateBool = true;
+    public AudioSource ShootingSound;
     
     /*
      * TurretAim variables
@@ -36,7 +37,7 @@ public class TankController : MonoBehaviour
     //TODO: Get position from the menu spot and assign it here before spawn, need to code, Spawn() function
     //and instantiate the model of the tank in the position
     
-    
+    public ParticleSystem muzzleFlash;
 
 
     protected float Timer;
@@ -268,6 +269,12 @@ public class TankController : MonoBehaviour
             loaded = false;
             //Debug.Log("fire"+gameObject);
             //Debug.DrawRay(emitter.transform.position,emitter.transform.forward* emitter.transform.position.magnitude,Color.red,1f);
+                // if(muzzleFlash)
+                // {
+                //     muzzleFlash.Play();
+                // }
+                muzzleFlash.Play();
+                ShootingSound.Play();
                 RaycastHit hit;
                 if (target != null)
                 {
@@ -280,7 +287,7 @@ public class TankController : MonoBehaviour
                         {
                             hitTarget.TakeDamage(attackDamage);
                         }
-
+                        
                         GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
                         Destroy(impactGO, 2f);
 

@@ -29,7 +29,7 @@ Transform:
   m_Children:
   - {fileID: 673609371}
   m_Father: {fileID: 651508127026703699}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &673609370
 GameObject:
@@ -150,7 +150,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.1, y: 2.48, z: 4.71}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 6091271318064083358}
   m_Father: {fileID: 8416469396698741503}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -189,7 +190,6 @@ Transform:
   m_Children:
   - {fileID: 8416469396698741503}
   - {fileID: 6640800094455778902}
-  - {fileID: 6091271318064083358}
   - {fileID: 4958344891503782266}
   - {fileID: 4317267}
   - {fileID: 3595884892403014234}
@@ -266,7 +266,6 @@ MonoBehaviour:
   maxHealth: 200
   currentHealth: 0
   alive: 1
-  tankdetail: {fileID: 0}
   slider: {fileID: 3034725737593424426}
   gradient:
     serializedVersion: 2
@@ -299,6 +298,8 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   fill: {fileID: 5958642149814775853}
   DestroySound: {fileID: 0}
+  explosion: {fileID: 6714832673058710252, guid: 1609d7181abdfce42836228a287f4051,
+    type: 3}
 --- !u!195 &977277654
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -335,7 +336,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireRange: 20
   tankListUpdateBool: 1
+  ShootingSound: {fileID: 0}
   turretAim: {fileID: 0}
+  muzzleFlash: {fileID: 4193351848886889946}
   BulletPrefab: {fileID: 5969628609626260578, guid: 358cb4aac593f564cabdfaa2af538e11,
     type: 3}
   emitter: {fileID: 819235990}
@@ -343,8 +346,10 @@ MonoBehaviour:
   states: []
   navAgent: {fileID: 977277654}
   target: {fileID: 0}
-  enemiesList: []
-  friendList: []
+  redList: []
+  blueList: []
+  impactEffect: {fileID: 5118391494474765974, guid: 37b69e8cdfeec6746a440fd790ecf46a,
+    type: 3}
 --- !u!1 &784593762676918881
 GameObject:
   m_ObjectHideFlags: 0
@@ -448,12 +453,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1434181206429469901}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.800001, y: 1.93, z: -0.42000002}
+  m_LocalPosition: {x: 5.7000012, y: -0.5500001, z: -5.13}
   m_LocalScale: {x: 0.099999994, y: 0.099999994, z: 0.099999994}
   m_Children:
   - {fileID: 6308826516806053642}
-  m_Father: {fileID: 651508127026703699}
-  m_RootOrder: 2
+  m_Father: {fileID: 819235990}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1917890660522914120
 GameObject:
@@ -5461,7 +5466,7 @@ Transform:
   m_Children:
   - {fileID: 4701839183270917910}
   m_Father: {fileID: 651508127026703699}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4978065231383345589
 GameObject:
@@ -5559,7 +5564,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6308826516806053642
 Transform:
   m_ObjectHideFlags: 0
@@ -5568,7 +5573,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5635552545522315183}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 5.7, z: 50.13}
+  m_LocalPosition: {x: -58.1, y: 5.7, z: 49.5}
   m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
   m_Children: []
   m_Father: {fileID: 6091271318064083358}
@@ -6407,7 +6412,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -6510,8 +6515,66 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    m_BurstCount: 0
-    m_Bursts: []
+    m_BurstCount: 1
+    m_Bursts:
+    - serializedVersion: 2
+      time: 0
+      countCurve:
+        serializedVersion: 2
+        minMaxState: 0
+        scalar: 30
+        minScalar: 30
+        maxCurve:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          - serializedVersion: 3
+            time: 1
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        minCurve:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          - serializedVersion: 3
+            time: 1
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+      cycleCount: 1
+      repeatInterval: 0.01
+      probability: 1
   SizeModule:
     enabled: 0
     curve:
@@ -19887,7 +19950,7 @@ PrefabInstance:
     - target: {fileID: 3595884894223360506, guid: cf9dab070e9d0dd458d210ce8b56f98e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3595884894223360506, guid: cf9dab070e9d0dd458d210ce8b56f98e,
         type: 3}
