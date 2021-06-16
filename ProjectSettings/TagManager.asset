@@ -10,8 +10,10 @@ TagManager:
   - plane
   - BlueWin
   - RedWin
-  - Player01
   - Enemy
+  - Red
+  - Blue
+  - Player01
   layers:
   - Default
   - TransparentFX

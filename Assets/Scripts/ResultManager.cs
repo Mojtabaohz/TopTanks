@@ -15,7 +15,7 @@ public class ResultManager : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(DelayCall(45f));
+        //StartCoroutine(DelayCall(45f));
     }
     private IEnumerator DelayCall(float time)
     {

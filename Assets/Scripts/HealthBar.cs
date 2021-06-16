@@ -11,7 +11,7 @@ public class HealthBar : MonoBehaviour
     public int maxHealth;
     public int currentHealth;
     public bool alive = true;
-
+    public TankController tankdetail;
     public Slider slider;
     public Gradient gradient;
     public Image fill;
@@ -31,8 +31,8 @@ public class HealthBar : MonoBehaviour
             FindObjectOfType<ResultManager>().score++;
             //Debug.Log(FindObjectOfType<ResultManager>().score);
             
-            gameObject.SetActive(false);
-            
+            Destroy(gameObject);
+
         }
         
     }
@@ -61,6 +61,7 @@ public class HealthBar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        tankdetail = gameObject.GetComponent<TankController>();
         alive = true;
         currentHealth = maxHealth;
         slider.maxValue = maxHealth;

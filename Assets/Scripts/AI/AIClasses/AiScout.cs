@@ -16,10 +16,12 @@ public class AiScout : BaseAI
     public List<Transform> targetTransform = new List<Transform>();
 
     
-
-    private void FindTarget(bool ally)
+/// <summary>
+/// Find a target base on the AI side
+/// </summary>
+    private void FindTarget()
     {
-        if (ally)
+        if (gameObject.CompareTag("Player"))
         {
             int rnd = Random.Range(0, Tank.enemiesList.Length);
             mainTarget = Tank.enemiesList[rnd].transform;
@@ -33,38 +35,23 @@ public class AiScout : BaseAI
     }
     public void Update()
     {
-        if (gameObject.CompareTag("Enemy"))
+        
+        //When AI does not have target will update the list of tanks and find a target
+        if (!mainTarget)
         {
-            if (mainTarget)
-            {
-                MoveToTarget(mainTarget);
-                Fire();
-            }
-            else
-            {
-                FindTarget(false);
-            } 
+            Tank.turretAim.isIdle = mainTarget == null;
+            Tank.UpdateTankList();
+            FindTarget();
+            
         }
+        //When AI have the target it will Aim and move towards it
         else
         {
-            if (mainTarget)
-            {
-                MoveToTarget(mainTarget);
-                Fire();
-            }
-            else
-            {
-                FindTarget(true);
-            } 
+            Debug.Log("update turret position");
+            MoveToTarget(mainTarget);
+            Fire();
+            Tank.turretAim.aimPosition = mainTarget.position;
         }
-        
-        
-            
-                
-                //Debug.Log(Tank.GetComponent<HealthBar>().currentHealth);
-                //Debug.Log("move to target", Tank.target);
-                //yield return TurretLookAt(Tank.target);
-                //LookForNewTarget();
 
     }
 
@@ -84,17 +71,7 @@ public class AiScout : BaseAI
         }
     }
 
-    private void LookForNewTarget()
-    {
-        if (!Tank.target)
-        {
-            mainTarget = Tank.target;
-        }
-        else
-        {
-            WonderAround();
-        }
-    }
+    
 
     private void WonderAround()
     {

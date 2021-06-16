@@ -5177,7 +5177,6 @@ GameObject:
   - component: {fileID: 7190398865782222750}
   - component: {fileID: 7054500731997716115}
   - component: {fileID: 4703594231726676161}
-  - component: {fileID: 438089010}
   m_Layer: 0
   m_Name: ZTQ15
   m_TagString: Player
@@ -5297,6 +5296,7 @@ MonoBehaviour:
   maxHealth: 150
   currentHealth: 0
   alive: 1
+  tankdetail: {fileID: 0}
   slider: {fileID: 3886843334435356983}
   gradient:
     serializedVersion: 2
@@ -5343,6 +5343,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireRange: 20
+  tankListUpdateBool: 1
+  turretAim: {fileID: 0}
   BulletPrefab: {fileID: 5969628609626260578, guid: 358cb4aac593f564cabdfaa2af538e11,
     type: 3}
   emitter: {fileID: 5316909391930759975}
@@ -5352,24 +5354,6 @@ MonoBehaviour:
   target: {fileID: 0}
   enemiesList: []
   friendList: []
---- !u!114 &438089010
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3582226334812038042}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 0
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}
-  outlineWidth: 2
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []
 --- !u!1 &4589222523790229414
 GameObject:
   m_ObjectHideFlags: 0

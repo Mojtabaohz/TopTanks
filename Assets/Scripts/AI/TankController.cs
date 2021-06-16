@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
-using Random = System.Random;
+using Random=UnityEngine.Random;
 
 /// <summary>
 /// The vehicle that will do battle. This is the same for every participant in the arena.
@@ -14,12 +14,12 @@ public class TankController : MonoBehaviour
     private float distanceToTarget;
     public int fireRange = 100;
     private bool loaded = false;
-    //public bool active = false;
+    public bool tankListUpdateBool = true;
     
     /*
      * TurretAim variables
      */
-    private TurretAim turretAim = null;
+    public TurretAim turretAim = null;
     private bool isIdle = false;
     
     
@@ -61,29 +61,47 @@ public class TankController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        turretAim = gameObject.GetComponent<TurretAim>();
+        
         ai = gameObject.AddComponent<AiScout>();
         SetAI(ai);
- 
+        turretAim = gameObject.GetComponent<TurretAim>();
         //active = true;
         navAgent.speed = TankSpeed;
         navAgent.angularSpeed = RotationSpeed;
         navAgent.stoppingDistance = 30;
-        enemiesList = GameObject.FindGameObjectsWithTag("Enemy");
-        friendList = GameObject.FindGameObjectsWithTag("Player");
+        UpdateTankList();
         ReloadBullet();
-        StartBattle();
     }
 
+    private void FindTarget()
+    {
+        if (gameObject.CompareTag("Player"))
+        {
+            int rnd = Random.Range(0, enemiesList.Length);
+            target = enemiesList[rnd].transform;
+        }
+        else
+        {
+            int rnd2 = Random.Range(0, friendList.Length);
+            target = friendList[rnd2].transform;
+        }
+        
+    }
+    
+    public void UpdateTankList()
+    {
+        if (!target)
+        {
+            Array.Clear(enemiesList,0,enemiesList.Length);
+            Array.Clear(friendList,0,friendList.Length);
+            enemiesList = GameObject.FindGameObjectsWithTag("Enemy");
+            friendList = GameObject.FindGameObjectsWithTag("Player");
+            tankListUpdateBool = false;
+        }
+    }
     public void Update()
     {
         ReloadBullet();
-        
-        if (target == null)
-            turretAim.isIdle = target == null;
-        else
-            turretAim.aimPosition = target.position;
-        //
     }
 
     
@@ -91,7 +109,7 @@ public class TankController : MonoBehaviour
     /// Assigns the AI that steers this instance
     /// </summary>
     /// <param name="_ai"></param>
-    public void SetAI(BaseAI _ai) {
+    private void SetAI(BaseAI _ai) {
         ai = _ai;
         ai.Tank = this;
     }
@@ -122,19 +140,9 @@ public class TankController : MonoBehaviour
             
     }
     */
-    /// <summary>
-    /// Tell this ship to start battling
-    /// Should be called only once
-    /// </summary>
-    public void StartBattle() {
-        //Debug.Log("Battle starts");
-        ai.RunAI();
-    }
+    
 
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-    }
+    
 
     /// <summary>
     /// If a tank is inside the 'scanner', its information (distance and name) will be sent to the AI
@@ -151,12 +159,15 @@ public class TankController : MonoBehaviour
             ai.OnScannedRobot(scannedRobotEvent);
         }
     }
-
+    /// <summary>
+    /// Calculate the distance between current game object and the target
+    /// </summary>
+    /// <param name="target"> chosen target that the AI will chose based on its algorithms</param>
     void DistanceDetection(Transform target){
         distanceToTarget = Vector3.Distance(transform.position, target.transform.position);
     }
     /// <summary>
-    /// Move this ship ahead by the given distance
+    /// Move this tank ahead by the given distance
     /// </summary>
     /// <param name="distance">The distance to move</param>
     /// <returns></returns>
@@ -187,7 +198,7 @@ public class TankController : MonoBehaviour
     }
 
     /// <summary>
-    /// Move the ship backwards by the given distance
+    /// Move the tank backwards by the given distance
     /// </summary>
     /// <param name="distance">The distance to move</param>
     /// <returns></returns>
@@ -202,34 +213,7 @@ public class TankController : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Turns the ship left by the given angle
-    /// </summary>
-    /// <param name="angle">The angle to rotate</param>
-    /// <returns></returns>
-    public IEnumerator __TurnLeft(float angle) {
-        int numFrames = (int)(angle / (RotationSpeed * Time.fixedDeltaTime));
-        for (int f = 0; f < numFrames; f++) {
-            transform.Rotate(0f, -RotationSpeed * Time.fixedDeltaTime, 0f);
-
-            yield return new WaitForFixedUpdate();            
-        }
-    }
-
-    /// <summary>
-    /// Turns the ship right by the given angle
-    /// </summary>
-    /// <param name="angle">The angle to rotate</param>
-    /// <returns></returns>
-    public IEnumerator __TurnRight(float angle) {
-        int numFrames = (int)(angle / (RotationSpeed * Time.fixedDeltaTime));
-        for (int f = 0; f < numFrames; f++) {
-            transform.Rotate(0f, RotationSpeed * Time.fixedDeltaTime, 0f);
-
-            yield return new WaitForFixedUpdate();            
-        }
-    }
-
+    
     /// <summary>
     /// Sit and hold still for one (fixed!) update
     /// </summary>
@@ -274,17 +258,7 @@ public class TankController : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Turn the sensor to the left by the given angle
-    /// </summary>
-    /// <param name="angle">The angle to rotate</param>
-    /// <returns></returns>
-    public IEnumerator __TurretLookAt(Transform target)
-    {
-        //Turret.transform.rotation = Quaternion.LookRotation(target.position);
-        
-        Turret.transform.LookAt(target);
-        yield return new WaitForFixedUpdate();
-    }
+    
+    
     
 }
