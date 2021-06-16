@@ -90,6 +90,8 @@ public class TurretAim : MonoBehaviour
 
         private void Update()
         {
+            Debug.Log("Idle" +isIdle);
+            Debug.Log("Aimed"+isAimed);
             if (isIdle)
             {
                 if (!IsTurretAtRest)

@@ -59,10 +59,7 @@ public class BaseAI : MonoBehaviour
     /// </summary>
     /// <param name="angle">The angle to rotate</param>
     /// <returns></returns>
-    public IEnumerator TurretLookAt(Transform target)
-    {
-        yield return Tank.__TurretLookAt(target);
-    }
+    
     
 
     /// <summary>
@@ -70,18 +67,14 @@ public class BaseAI : MonoBehaviour
     /// </summary>
     /// <param name="angle">The angle to rotate</param>
     /// <returns></returns>
-    public IEnumerator TurnLeft(float angle) {
-        yield return Tank.__TurnLeft(angle);
-    }
+    
 
     /// <summary>
     /// Turns the ship right by the given angle
     /// </summary>
     /// <param name="angle">The angle to rotate</param>
     /// <returns></returns>
-    public IEnumerator TurnRight(float angle) {
-        yield return Tank.__TurnRight(angle);
-    }
+    
 
     /// <summary>
     /// Fire from the forward pointing cannon
