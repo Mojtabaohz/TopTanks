@@ -2510,6 +2510,72 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 242815284}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &252803148
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 252803151}
+  - component: {fileID: 252803150}
+  - component: {fileID: 252803149}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &252803149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 252803148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalAxis: Mouse X
+  m_VerticalAxis: Mouse Y
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &252803150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 252803148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!4 &252803151
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 252803148}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &253705218
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5908,12 +5974,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 90280038}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &788058096 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7040636646967737074, guid: 34e2c255065996e45b25635c60cfe27f,
-    type: 3}
-  m_PrefabInstance: {fileID: 137384023}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &809603777
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7844,7 +7904,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1091564387}
+      - m_Target: {fileID: 1336127563}
         m_MethodName: camSwitchButton
         m_Mode: 1
         m_Arguments:
@@ -7904,7 +7964,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6aa91a8bc3aef3346812da20fd2159ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam1: {fileID: 788058096}
+  cam1: {fileID: 421410498}
   cam2: {fileID: 2134403935}
 --- !u!1001 &1095990534
 PrefabInstance:
@@ -10621,7 +10681,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1519101603}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1878969587}
+        m_MethodName: PauseGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1519101603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12593,7 +12664,7 @@ Transform:
   m_GameObject: {fileID: 1878969586}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1085.9745, y: -12.766418, z: 2838.9668}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.9999998, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 11
