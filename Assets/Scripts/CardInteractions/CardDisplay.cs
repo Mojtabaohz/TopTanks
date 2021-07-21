@@ -20,7 +20,7 @@ public class CardDisplay : MonoBehaviour
 
     public Text healthText;
 
-    public Text movementSpeedText;
+    public Text maxMovementSpeedText;
 
     public Text armorText;
     
@@ -32,7 +32,7 @@ public class CardDisplay : MonoBehaviour
         descriptionText.text = card.description;
         artworkImage.sprite = card.artwork;
         attackDamageText.text = card.attackDamage.ToString();
-        movementSpeedText.text = card.movementSpeed.ToString();
+        maxMovementSpeedText.text = card.tankMaxMoveSpeed.ToString();
         healthText.text = card.baseHealth.ToString();
         armorText.text = card.armor.ToString();
         CheckRarity();
